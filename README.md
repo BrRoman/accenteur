@@ -2,17 +2,14 @@
 
 Accenteur is a web application written in Javascript to accentuate latin texts according to the liturgical rules in force in the Roman Catholic Church.
 
-Simply click on `index.html`.
-
 Its algorithms and data were adaptated from [Collatinus](https://github.com/biblissima/collatinus).
 
 Its name comes from the french name of a little bird: the Dunnock (*Prunella modularis*).
 
 
-# Data
-The file `accenteur/accenteur_data.js` contains all the data necessary to accentify a latin word (models, roots and terminations).
+# Instructions
 
-The folder `accenteur/sources/` contains the raw data files extracted from Collatinus (`models.la` and `lemmes.la`) and a script to convert them into JS Objects and write these Objects in the file `accenteur/accenteur_data.js`.
+Simply click on `index.html`.
 
 
 # Algorithm
@@ -48,9 +45,18 @@ Accenteur knows the enclitics, and thus he will retain a second combination: 'do
 Hence the result in the output field: 'Dómine|Domíne'.
 
 
+# Data
+The file `accenteur/accenteur_data.js` contains all the data necessary to accentify a latin word (models, roots and terminations).
+
+The folder `accenteur/sources/` contains the raw data files extracted from Collatinus (`models.la` and `lemmes.la`) and a script to convert them into JS Objects and write these Objects in the file `accenteur/accenteur_data.js`.
+
+
+# Resources
+
+On [latin-ecclesiastic-accents](https://github.com/gregorio-project/latin-ecclesiastic-accents), you will find the rules of the latin accentuation and a corpus of latin accented texts.
+
+
 # Thanks
 
 Great thanks to Philippe Verkerk from Collatinus for its counsels, patience and encouragements.
-
-
 
