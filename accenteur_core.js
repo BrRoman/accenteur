@@ -103,7 +103,7 @@ function accentify(word, uppercase){
             }
         }
     }
-    // J? If the word begins with a "i" (or "I") + vowel, or contains a "i" between 2 vowels, then replace it with "j" (or "J"):
+    // J? If the word begins with a "i" (or "I") + vowel, or contains a "i" between 2 vowels, or begins with prefix + "i", then replace it with "j" (or "J"):
     var new_word = word;
     var regex = /^i([aeiouy])/g;
     new_word = new_word.replace(regex, "j$1");
@@ -114,6 +114,24 @@ function accentify(word, uppercase){
     var regex = /([aeiouy])i([aeiouy])/g;
     new_word = new_word.replace(regex, "$1j$2");
     new_word_all = new_word_all.replace(regex, "$1j$2");
+    // abi*:
+    new_word = new_word.replace(/^abi/g, "abj");
+    new_word_all = new_word_all.replace(/^abi/g, "abj");
+    // adi*:
+    new_word = new_word.replace(/^adi/g, "adj");
+    new_word_all = new_word_all.replace(/^adi/g, "adj");
+    // disi*:
+    new_word = new_word.replace(/^disi/g, "disj");
+    new_word_all = new_word_all.replace(/^disi/g, "disj");
+    // ini*:
+    new_word = new_word.replace(/^ini/g, "inj");
+    new_word_all = new_word_all.replace(/^ini/g, "inj");
+    // ob*:
+    new_word = new_word.replace(/^obi/g, "obj");
+    new_word_all = new_word_all.replace(/^obi/g, "obj");
+    // peri*:
+    new_word = new_word.replace(/^peri/g, "perj");
+    new_word_all = new_word_all.replace(/^peri/g, "perj");
     if(new_word != word){
         with_j = true;
         sub_found = search_quantified(new_word);
@@ -169,6 +187,7 @@ function accentify(word, uppercase){
                 s = s.replace("j", "i").replace("J", "I");
             }
             found.push(s);
+
             if(has_æœ && s.indexOf("āĕ") != -1){ // We want "ærem" but not "aerem".
                 found.pop();
             }
@@ -257,12 +276,15 @@ function qty_to_accent(plain, quantified){
     var num_syllables = 0;
 
     // We note the quantities of all the vowels of the word, and we count the syllables:
-    for(var i in quantified){
+    for(var i = 0; i < quantified.length; i++){
         var c = quantified[i];
         // 1. Vowels without quantities:
         if(vowels.indexOf(c) != -1){
-            // Vowel without quantity is considered as a breve, except "u" after "q" and "e" after "ā" (because "sāeculum" is different of "āĕris"):
+            // Vowel without quantity is considered as a breve, except "u" after "q", "i" before "u", and "e" after "ā" (because "sāeculum" is different of "āĕris"):
             if((plain[i] == "u" && ["Q", "q"].indexOf(plain[i - 1]) != -1) || (c == "e" && plain[i - 1] == "a")){
+                quantities[i] = "0";
+            }
+            else if(plain[i] == "i" && plain[i + 1] == "u"){
                 quantities[i] = "0";
             }
             else{
