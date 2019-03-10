@@ -17,6 +17,7 @@ function accentify(word, uppercase){
     var prefix = "";
     var enclitic = "";
     var with_j = false;
+    var has_æœ = false;
     var sub_found = [];
     // Uppercase? Set to lowercase:
     if(uppercase){
@@ -124,6 +125,19 @@ function accentify(word, uppercase){
             found.push(s);
         }
     }
+    // æ, œ:
+    new_word = word.replace("æ", "ae").replace("Æ", "ae").replace("œ", "oe");
+    new_word_all = word.replace("æ", "ae").replace("Æ", "Ae").replace("œ", "oe");
+    if(new_word != word){
+        has_æœ = true;
+        sub_found = search_quantified(new_word);
+        for(var i = 0; i < sub_found.length; i++){
+            s = sub_found[i];
+            if(s.indexOf("āĕ") == -1){ // We want "ærem" but not "aerem".
+                found.push(s);
+            }
+        }
+    }
     // Finally, retry with all the possibilities together:
     sub_found = search_quantified(new_word_all);
     for(var i = 0; i < sub_found.length; i++){
@@ -155,6 +169,9 @@ function accentify(word, uppercase){
                 s = s.replace("j", "i").replace("J", "I");
             }
             found.push(s);
+            if(has_æœ && s.indexOf("āĕ") != -1){ // We want "ærem" but not "aerem".
+                found.pop();
+            }
         }
     }
     // Words in "-cumque":
@@ -231,6 +248,7 @@ function search_quantified(word){
 
 // Converts a quantified word into an accented one:
 function qty_to_accent(plain, quantified){
+    plain = plain.replace("æ", "ae").replace("Æ", "Ae").replace("œ", "oe");
     var with_accents = plain;
     var plain_split = plain.split("");
     var quantified_split = quantified.split("");
@@ -336,6 +354,10 @@ function qty_to_accent(plain, quantified){
     for(var j = 0; j < plain_split.length; j++){
         if(plain_split[j] == "a" && quantified_split[j + 1] == "e"){
             plain_split[j] = "æ";
+            plain_split[j + 1] = "";
+        }
+        if(plain_split[j] == "A" && quantified_split[j + 1] == "e"){
+            plain_split[j] = "Æ";
             plain_split[j + 1] = "";
         }
         if(plain_split[j] == "o" && quantified_split[j + 1] == "e"){
