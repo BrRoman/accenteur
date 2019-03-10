@@ -127,7 +127,7 @@ function accentify(word, uppercase){
     }
     // æ, œ:
     new_word = word.replace("æ", "ae").replace("Æ", "ae").replace("œ", "oe");
-    new_word_all = word.replace("æ", "ae").replace("Æ", "Ae").replace("œ", "oe");
+    new_word_all = new_word_all.replace("æ", "ae").replace("Æ", "Ae").replace("œ", "oe");
     if(new_word != word){
         has_æœ = true;
         sub_found = search_quantified(new_word);
