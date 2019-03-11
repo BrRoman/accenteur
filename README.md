@@ -19,7 +19,7 @@ Try Accenteur [here](https://brroman.github.io/accenteur/).
 
 ### Algorithm
 
-More details about the code in the [Wiki](https://github.com/BrRoman/accenteur/wiki/Home/_edit).
+More details about the code in the [Wiki](https://github.com/BrRoman/accenteur/wiki/Home/).
 
 
 ### Resources
