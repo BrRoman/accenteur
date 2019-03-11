@@ -120,6 +120,9 @@ function accentify(word, uppercase){
     // adi*:
     new_word = new_word.replace(/^adi/g, "adj");
     new_word_all = new_word_all.replace(/^adi/g, "adj");
+    // coni*:
+    new_word = new_word.replace(/^coni/g, "conj");
+    new_word_all = new_word_all.replace(/^coni/g, "conj");
     // disi*:
     new_word = new_word.replace(/^disi/g, "disj");
     new_word_all = new_word_all.replace(/^disi/g, "disj");
