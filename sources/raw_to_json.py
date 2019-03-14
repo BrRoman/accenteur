@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 # This script converts the source files (lemmes.la and modeles.la)
-# into 3 JSON Objects (models, roots and terminations) in the global data file 'accenteur_data.json'.
+# into 3 JSON Objects (models, roots and terminations) in the global data file 'data.json'.
 
 import os
 import re 
@@ -75,8 +75,8 @@ def long_by_position(word):
 # Path to the main directory:
 accenteur_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# Delete the contents of accenteur_data.js:
-this_file = open(accenteur_dir + "/accenteur_data.js", "w", encoding="utf-8")
+# Delete the contents of data.js:
+this_file = open(accenteur_dir + "/data.js", "w", encoding="utf-8")
 this_file.write("");
 this_file.close()
 
@@ -269,7 +269,7 @@ for l in lemmes_lines:
 #######################################################################################
 
 # Finally, we write models, roots and terminations in the data file as JSON Objects:
-json_path = open(accenteur_dir + "/accenteur_data.js", "a", encoding="utf-8")
+json_path = open(accenteur_dir + "/data.js", "a", encoding="utf-8")
 json_path.write("//##### Models #####\n\nvar models = ");
 json_path.write(json.JSONEncoder(ensure_ascii = False).encode(models))
 json_path.write("\n\n\n");
