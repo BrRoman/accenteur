@@ -1,0 +1,3 @@
+bootstrap* linguist-vendored=true
+fontawesome* linguist-vendored=true
+jquery-ui* linguist-vendored=true
