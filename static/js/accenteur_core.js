@@ -135,7 +135,7 @@ function accentify(word, uppercase){
     // peri*:
     new_word = new_word.replace(/^peri/g, "perj");
     new_word_all = new_word_all.replace(/^peri/g, "perj");
-    if(new_word != word){
+    if(new_word != word && count_vowels(new_word) > 2){
         with_j = true;
         sub_found = search_quantified(new_word);
         for(var i = 0; i < sub_found.length; i++){
