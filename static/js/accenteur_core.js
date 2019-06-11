@@ -271,52 +271,62 @@ function search_quantified(word){
 // Converts a quantified word into an accented one:
 function qty_to_accent(plain, quantified){
     plain = plain.replace("æ", "ae").replace("Æ", "Ae").replace("œ", "oe");
+    quantified = quantified.replace("æ", "ae").replace("Æ", "Ae").replace("œ", "oe");
     var with_accents = plain;
     var plain_split = plain.split("");
     var quantified_split = quantified.split("");
     var accentable = false;
-    var quantities = [quantified.length]; // Will contains something like ["0", "+", "0", "0", "-", "-"].
+    var quantities = new Array(quantified.length); // Will contains something like ["0", "+", "0", "0", "-", "-"].
     var num_syllables = 0;
 
     // We note the quantities of all the vowels of the word, and we count the syllables:
     for(var i = 0; i < quantified.length; i++){
+        var b = quantified[i - 1];
         var c = quantified[i];
-        // 1. Vowels without quantities:
-        if(vowels.indexOf(c) != -1){
-            // Vowel without quantity is considered as a breve, except "u" after "q", "i" before "u", and "e" after "ā" (because "sāeculum" is different of "āĕris"):
-            if((plain[i] == "u" && ["Q", "q"].indexOf(plain[i - 1]) != -1) || (c == "e" && plain[i - 1] == "a")){
-                quantities[i] = "0";
-            }
-            else if(plain[i] == "i" && plain[i + 1] == "u"){
-                quantities[i] = "0";
-            }
-            else{
-                quantities[i] = "-";
+        var d = quantified[i + 1];
+        if(c != "̆"){
+            // 1. Vowels without quantities:
+            if(vowels.indexOf(c) != -1){
+                // Vowel without quantity is considered as a breve, except "u" after "q", "i" before "u", and "e" after "ā" (because "sāeculum" is different of "āĕris"):
+                if((c == "u" && ["Q", "q"].indexOf(b) != -1) || (c == "e" && dequantify(b) == "a")){
+                    quantities[i] = "0";
+                }
+                else if(c == "i" && dequantify(d) == "u"){
+                    quantities[i] = "0";
+                }
+                else{
+                    quantities[i] = "-";
+                }
+
+                // If c is not the second letter of "au", "eu", "ae", "oe", "qu", "gu", and if it is not a "i" in the beginning of a world and followed by a "o", add a syllable:
+                if(((["e", "u"].indexOf(c) != -1 && ["a", "e", "o", "A", "E", "q", "g"].indexOf(dequantify(b)) != -1) || (["i", "I"].indexOf(c) != -1 && dequantify(d) == "o")) == false){
+                    num_syllables ++;
+                }
             }
 
-            // If c is not the second letter of "au", "eu", "ae", "oe", "qu", "gu", add a syllable:
-            if((["e", "u"].indexOf(plain[i]) != -1 && ["a", "e", "o", "A", "E", "q", "g"].indexOf(plain[i - 1]) != -1) == false){
+            // 2. Vowels with quantities:
+            else if(longs.indexOf(c) != -1){
+                if(quantified_split[i + 1] == "\u0306"){ // Long + combining breve = breve.
+                    quantities[i] = "-";
+                }
+                else{
+                    quantities[i] = "+";
+                }
                 num_syllables ++;
             }
-        }
+            else if(breves.indexOf(c) != -1){
+                quantities[i] = "-";
+                num_syllables ++;
+            }
+            else if(c == "\u0306"){ // Combining breve => there are two quantities, and we set the 1st to "breve".
+                quantities[i - 1] = "-";
+                quantities[i] = "c";
+            }
 
-        // 2. Vowels with quantities:
-        else if(longs.indexOf(c) != -1){
-            quantities[i] = "+";
-            num_syllables ++;
-        }
-        else if(breves.indexOf(c) != -1){
-            quantities[i] = "-";
-            num_syllables ++;
-        }
-        else if(c == "\u0306"){ // Combining breve => there are two quantities, and we set the 1st to "breve".
-            quantities[i - 1] = "-";
-            quantities[i] = "c";
-        }
-
-        // 3. Others (consonantics):
-        else{
-            quantities[i] = "0";
+            // 3. Others (consonantics):
+            else{
+                quantities[i] = "0";
+            }
         }
     }
 
@@ -392,6 +402,19 @@ function qty_to_accent(plain, quantified){
     }
     with_accents = plain_split.join("");
     return([accentable, with_accents]);
+}
+
+// Dequantify a vowel:
+function dequantify(vowel){
+    if(longs.indexOf(vowel) != -1){
+        return(vowels[longs.indexOf(vowel)]);
+    }
+    else if(breves.indexOf(vowel) != -1){
+        return(vowels[breves.indexOf(vowel)]);
+    }
+    else{
+        return vowel;
+    }
 }
 
 // Counts the number of vowels in a word:
