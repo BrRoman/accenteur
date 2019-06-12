@@ -297,11 +297,6 @@ function qty_to_accent(plain, quantified){
                 else{
                     quantities[i] = "-";
                 }
-
-                // If c is not the second letter of "au", "eu", "ae", "oe", "qu", "gu", and if it is not a "i" in the beginning of a world and followed by a "o", add a syllable:
-                if(((["e", "u"].indexOf(c) != -1 && ["a", "e", "o", "A", "E", "q", "g"].indexOf(dequantify(b)) != -1) || (["i", "I"].indexOf(c) != -1 && dequantify(d) == "o")) == false){
-                    num_syllables ++;
-                }
             }
 
             // 2. Vowels with quantities:
@@ -312,11 +307,9 @@ function qty_to_accent(plain, quantified){
                 else{
                     quantities[i] = "+";
                 }
-                num_syllables ++;
             }
             else if(breves.indexOf(c) != -1){
                 quantities[i] = "-";
-                num_syllables ++;
             }
             else if(c == "\u0306"){ // Combining breve => there are two quantities, and we set the 1st to "breve".
                 quantities[i - 1] = "-";
@@ -326,6 +319,29 @@ function qty_to_accent(plain, quantified){
             // 3. Others (consonantics):
             else{
                 quantities[i] = "0";
+            }
+
+            // Is this letter a new syllable?
+            var new_syllable = true;
+            // Not if it is a consonantic:
+            if(quantities[i] == "0"){
+                new_syllable = false;
+            }
+            // Not if it is a combining breve:
+            if(quantities[i] == "c"){
+                new_syllable = false;
+            }
+            // Not if it is the second letter of "au", "eu", "ae", "oe", "qu", "gu":
+            if(["e", "u"].indexOf(dequantify(c)) != -1 && ["a", "e", "o", "A", "E", "q", "g"].indexOf(dequantify(b)) != -1){
+                new_syllable = false;
+            }
+            // Not if it is a "i" in the beginning of a world and followed by a "o":
+            if(["i", "I"].indexOf(dequantify(c)) != -1 && i == 0 && dequantify(d) == "o"){
+                new_syllable = false;
+            }
+            // Conclusion:
+            if(new_syllable){
+                num_syllables ++;
             }
         }
     }
