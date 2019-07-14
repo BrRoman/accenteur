@@ -9,6 +9,7 @@ var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"
 var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "x", "y", "z"];
 
 function accentify(word, uppercase){
+    // Return the possible accented versions of the word:
     var found = search_quantified(word);
     
     // Try other possibilities, first separately and then together:
@@ -319,8 +320,11 @@ function qty_to_accent(plain, quantified){
         if(c != "̆"){
             // 1. Vowels without quantities:
             if(vowels.indexOf(c) != -1){
-                // Vowel without quantity is considered as a breve, except "u" after "q", "i" before "u", and "e" after "ā" (because "sāeculum" is different of "āĕris"):
+                // Vowel without quantity is considered as a breve, except "u" after "q", "u" between "g" and a vowel, "i" before "u", and "e" after "ā" (because "sāeculum" is different of "āĕris"):
                 if((c == "u" && ["Q", "q"].indexOf(b) != -1) || (c == "e" && dequantify(b) == "a")){
+                    quantities[i] = "0";
+                }
+                else if(c == "u" && b == "g" && vowels.indexOf(dequantify(d)) != -1){
                     quantities[i] = "0";
                 }
                 else if(c == "i" && dequantify(d) == "u"){
@@ -355,20 +359,28 @@ function qty_to_accent(plain, quantified){
 
             // Is this letter a new syllable?
             var new_syllable = true;
-            // Not if it is a consonantic:
+            // No if it is a consonantic:
             if(quantities[i] == "0"){
                 new_syllable = false;
             }
-            // Not if it is a combining breve:
+            // No if it is a combining breve:
             if(quantities[i] == "c"){
                 new_syllable = false;
             }
-            // Not if it is the second letter of "au", "eu", "ae", "oe", "qu", "gu":
-            if(["e", "u"].indexOf(dequantify(c)) != -1 && ["a", "e", "o", "A", "E", "q", "g"].indexOf(dequantify(b)) != -1){
+            // No if it is the second letter (without quantity) of "au", "eu", "ae", "qu":
+            if(quantities[i] == "0" && ["e", "u"].indexOf(dequantify(c)) != -1 && ["a", "e", "A", "E", "q"].indexOf(dequantify(b)) != -1){
                 new_syllable = false;
             }
-            // Not if it is a "i" in the beginning of a world and followed by a "o":
-            if(["i", "I"].indexOf(dequantify(c)) != -1 && i == 0 && dequantify(d) == "o"){
+            // No if it is the second letter (breve) of "oe" (cœpit, but not coégit):
+            if(quantities[i] == "-" && dequantify(c) == "e" && dequantify(b) == "o"){
+                new_syllable = false;
+            }
+            // No if it is a "u" between "g" and a vowel:
+            if(c == "u" && b == "g" && vowels.indexOf(dequantify(d)) != -1){
+                new_syllable = false;
+            }
+            // No if it is a "i" in the beginning of a world and followed by a "o" or a "u" (Ioseph, iusti):
+            if(["i", "I"].indexOf(dequantify(c)) != -1 && i == 0 && ["o", "u"].indexOf(dequantify(d)) != -1){
                 new_syllable = false;
             }
             // Conclusion:
@@ -470,8 +482,10 @@ function count_vowels(word){
     var num_v = 0;
     for(var i = 0; i < word.length; i++){
         if(vowels.indexOf(word[i]) != -1){
-            if(!(word[i] == "u"  && ["q", "g"].indexOf(word[i - 1]) != -1)){
-                num_v ++;
+            if(!(word[i] == "u"  && ["q", "Q"].indexOf(word[i - 1]) != -1)){
+                if(!(word[i] == "u"  && ["g", "G"].indexOf(word[i - 1]) != -1 && vowels.indexOf(word[i + 1]) != -1)){
+                    num_v ++;
+                }
             }
         }
     }
