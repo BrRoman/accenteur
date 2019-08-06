@@ -34,19 +34,6 @@ function accentify(word, uppercase){
         }
     }
     // Prefix? Replace it:
-    if(word.indexOf("ass") == 0 || new_word_all.indexOf("ass") == 0){
-        prefix = "ass";
-        new_word = word.replace(/^ass/g, "ads");
-        new_word_all = new_word_all.replace(/^ass/g, "ads");
-        sub_found = search_quantified(new_word);
-        for(var i = 0; i < sub_found.length; i++){
-            s = sub_found[i];
-            if(s != ""){
-                s = s.replace(/^([aāă])ds/g, "$1ss");
-            }
-            found.push(s);
-        }
-    }
     if(word.indexOf("acc") == 0 || new_word_all.indexOf("acc") == 0){
         prefix = "acc";
         new_word = word.replace(/^acc/g, "adc");
@@ -95,6 +82,19 @@ function accentify(word, uppercase){
             s = sub_found[i];
             if(s != ""){
                 s = s.replace(/^([aāă])dr/g, "$1rr");
+            }
+            found.push(s);
+        }
+    }
+    if(word.indexOf("ass") == 0 || new_word_all.indexOf("ass") == 0){
+        prefix = "ass";
+        new_word = word.replace(/^ass/g, "ads");
+        new_word_all = new_word_all.replace(/^ass/g, "ads");
+        sub_found = search_quantified(new_word);
+        for(var i = 0; i < sub_found.length; i++){
+            s = sub_found[i];
+            if(s != ""){
+                s = s.replace(/^([aāă])ds/g, "$1ss");
             }
             found.push(s);
         }
