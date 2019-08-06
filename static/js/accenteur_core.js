@@ -307,11 +307,11 @@ function search_quantified(word){
     }
 
     // A word in "-sti" ("-stis") can be a syncopated form ("amasti" for "amavisti"):
-    if(word.indexOf("sti") == word.length - 3 && word.length > 3){
+    if(word.length > 3 && word.indexOf("sti") == word.length - 3){
         /(\S*)([aeiou])sti/.exec(word);
         found.push(RegExp.$1 + longs[vowels.indexOf(RegExp.$2)] + "stī");
     }
-    if(word.indexOf("stis") == word.length - 4 && word.length > 4){
+    if(word.length > 4 && word.indexOf("stis") == word.length - 4){
         /(\S*)([aeiou])stis/.exec(word);
         found.push(RegExp.$1 + longs[vowels.indexOf(RegExp.$2)] + "stĭs");
     }
