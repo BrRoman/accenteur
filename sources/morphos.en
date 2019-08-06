@@ -1,0 +1,416 @@
+1:nominative singular
+2:vocative singular
+3:accusative singular
+4:genitive singular
+5:dative singular
+6:ablative singular
+7:nominative plural
+8:vocative plural
+9:accusative plural
+10:genitive plural
+11:dative plural
+12:ablative plural
+13:masculine nominative singular
+14:masculine vocative singular
+15:masculine accusative singular
+16:masculine genitive singular
+17:masculine dative singular
+18:masculine ablative singular
+19:masculine nominative plural
+20:masculine vocative plural
+21:masculine accusative plural
+22:masculine genitive plural
+23:masculine dative plural
+24:masculine ablative plural
+25:feminine nominative singular
+26:feminine vocative singular
+27:feminine accusative singular
+28:feminine genitive singular
+29:feminine dative singular
+30:feminine ablative singular
+31:feminine nominative plural
+32:feminine vocative plural
+33:feminine accusative plural
+34:feminine genitive plural
+35:feminine dative plural
+36:feminine ablative plural
+37:neuter nominative singular
+38:neuter vocative singular
+39:neuter accusative singular
+40:neuter genitive singular
+41:neuter dative singular
+42:neuter ablative singular
+43:neuter nominative plural
+44:neuter vocative plural
+45:neuter accusative plural
+46:neuter genitive plural
+47:neuter dative plural
+48:neuter ablative plural
+49:masculine nominative singular comparative
+50:masculine vocative singular comparative
+51:masculine accusative singular comparative
+52:masculine genitive singular comparative
+53:masculine dative singular comparative
+54:masculine ablative singular comparative
+55:masculine nominative plural comparative
+56:masculine vocative plural comparative
+57:masculine accusative plural comparative
+58:masculine genitive plural comparative
+59:masculine dative plural comparative
+60:masculine ablative plural comparative
+61:feminine nominative singular comparative
+62:feminine vocative singular comparative
+63:feminine accusative singular comparative
+64:feminine genitive singular comparative
+65:feminine dative singular comparative
+66:feminine ablative singular comparative
+67:feminine nominative plural comparative
+68:feminine vocative plural comparative
+69:feminine accusative plural comparative
+70:feminine genitive plural comparative
+71:feminine dative plural comparative
+72:feminine ablative plural comparative
+73:neuter nominative singular comparative
+74:neuter vocative singular comparative
+75:neuter accusative singular comparative
+76:neuter genitive singular comparative
+77:neuter dative singular comparative
+78:neuter ablative singular comparative
+79:neuter nominative plural comparative
+80:neuter vocative plural comparative
+81:neuter accusative plural comparative
+82:neuter genitive plural comparative
+83:neuter dative plural comparative
+84:neuter ablative plural comparative
+85:masculine nominative singular superlative
+86:masculine vocative singular superlative
+87:masculine accusative singular superlative
+88:masculine genitive singular superlative
+89:masculine dative singular superlative
+90:masculine ablative singular superlative
+91:masculine nominative plural superlative
+92:masculine vocative plural superlative
+93:masculine accusative plural superlative
+94:masculine genitive plural superlative
+95:masculine dative plural superlative
+96:masculine ablative plural superlative
+97:feminine nominative singular superlative
+98:feminine vocative singular superlative
+99:feminine accusative singular superlative
+100:feminine genitive singular superlative
+101:feminine dative singular superlative
+102:feminine ablative singular superlative
+103:feminine nominative plural superlative
+104:feminine vocative plural superlative
+105:feminine accusative plural superlative
+106:feminine genitive plural superlative
+107:feminine dative plural superlative
+108:feminine ablative plural superlative
+109:neuter nominative singular superlative
+110:neuter vocative singular superlative
+111:neuter accusative singular superlative
+112:neuter genitive singular superlative
+113:neuter dative singular superlative
+114:neuter ablative singular superlative
+115:neuter nominative plural superlative
+116:neuter vocative plural superlative
+117:neuter accusative plural superlative
+118:neuter genitive plural superlative
+119:neuter dative plural superlative
+120:neuter ablative plural superlative
+121:present indicative active 1st singular
+122:present indicative active 2nd singular
+123:present indicative active 3rd singular
+124:present indicative active 1st plural
+125:present indicative active 2nd plural
+126:present indicative active 3rd plural
+127:imperfect indicative active 1st singular
+128:imperfect indicative active 2nd singular
+129:imperfect indicative active 3rd singular
+130:imperfect indicative active 1st plural
+131:imperfect indicative active 2nd plural
+132:imperfect indicative active 3rd plural
+133:future indicative active 1st singular
+134:future indicative active 2nd singular
+135:future indicative active 3rd singular
+136:future indicative active 1st plural
+137:future indicative active 2nd plural
+138:future indicative active 3rd plural
+139:perfect indicative active 1st singular
+140:perfect indicative active 2nd singular
+141:perfect indicative active 3rd singular
+142:perfect indicative active 1st plural
+143:perfect indicative active 2nd plural
+144:perfect indicative active 3rd plural
+145:pluperfect indicative active 1st singular
+146:pluperfect indicative active 2nd singular
+147:pluperfect indicative active 3rd singular
+148:pluperfect indicative active 1st plural
+149:pluperfect indicative active 2nd plural
+150:pluperfect indicative active 3rd plural
+151:future perfect indicative active 1st singular
+152:future perfect indicative active 2nd singular
+153:future perfect indicative active 3rd singular
+154:future perfect indicative active 1st plural
+155:future perfect indicative active 2nd plural
+156:future perfect indicative active 3rd plural
+157:present subjunctive active 1st singular
+158:present subjunctive active 2nd singular
+159:present subjunctive active 3rd singular
+160:present subjunctive active 1st plural
+161:present subjunctive active 2nd plural
+162:present subjunctive active 3rd plural
+163:imperfect subjunctive active 1st singular
+164:imperfect subjunctive active 2nd singular
+165:imperfect subjunctive active 3rd singular
+166:imperfect subjunctive active 1st plural
+167:imperfect subjunctive active 2nd plural
+168:imperfect subjunctive active 3rd plural
+169:perfect subjunctive active 1st singular
+170:perfect subjunctive active 2nd singular
+171:perfect subjunctive active 3rd singular
+172:perfect subjunctive active 1st plural
+173:perfect subjunctive active 2nd plural
+174:perfect subjunctive active 3rd plural
+175:pluperfect subjunctive active 1st singular
+176:pluperfect subjunctive active 2nd singular
+177:pluperfect subjunctive active 3rd singular
+178:pluperfect subjunctive active 1st plural
+179:pluperfect subjunctive active 2nd plural
+180:pluperfect subjunctive active 3rd plural
+181:present imperative active 2nd singular
+182:present imperative active 2nd plural
+183:future imperative active 2nd singular
+184:future imperative active 3rd singular
+185:future imperative active 2nd plural
+186:future imperative active 3rd plural
+187:present infinitive active
+188:perfect infinitive active
+189:participle present active masculine nominative singular
+190:participle present active masculine vocative singular
+191:participle present active masculine accusative singular
+192:participle present active masculine genitive singular
+193:participle present active masculine dative singular
+194:participle present active masculine ablative singular
+195:participle present active masculine nominative plural
+196:participle present active masculine vocative plural
+197:participle present active masculine accusative plural
+198:participle present active masculine genitive plural
+199:participle present active masculine dative plural
+200:participle present active masculine ablative plural
+201:participle present active feminine nominative singular
+202:participle present active feminine vocative singular
+203:participle present active feminine accusative singular
+204:participle present active feminine genitive singular
+205:participle present active feminine dative singular
+206:participle present active feminine ablative singular
+207:participle present active feminine nominative plural
+208:participle present active feminine vocative plural
+209:participle present active feminine accusative plural
+210:participle present active feminine genitive plural
+211:participle present active feminine dative plural
+212:participle present active feminine ablative plural
+213:participle present active neuter nominative singular
+214:participle present active neuter vocative singular
+215:participle present active neuter accusative singular
+216:participle present active neuter genitive singular
+217:participle present active neuter dative singular
+218:participle present active neuter ablative singular
+219:participle present active neuter nominative plural
+220:participle present active neuter vocative plural
+221:participle present active neuter accusative plural
+222:participle present active neuter genitive plural
+223:participle present active neuter dative plural
+224:participle present active neuter ablative plural
+225:participle future active masculine nominative singular
+226:participle future active masculine vocative singular
+227:participle future active masculine accusative singular
+228:participle future active masculine genitive singular
+229:participle future active masculine dative singular
+230:participle future active masculine ablative singular
+231:participle future active masculine nominative plural
+232:participle future active masculine vocative plural
+233:participle future active masculine accusative plural
+234:participle future active masculine genitive plural
+235:participle future active masculine dative plural
+236:participle future active masculine ablative plural
+237:participle future active feminine nominative singular
+238:participle future active feminine vocative singular
+239:participle future active feminine accusative singular
+240:participle future active feminine genitive singular
+241:participle future active feminine dative singular
+242:participle future active feminine ablative singular
+243:participle future active feminine nominative plural
+244:participle future active feminine vocative plural
+245:participle future active feminine accusative plural
+246:participle future active feminine genitive plural
+247:participle future active feminine dative plural
+248:participle future active feminine ablative plural
+249:participle future active neuter nominative singular
+250:participle future active neuter vocative singular
+251:participle future active neuter accusative singular
+252:participle future active neuter genitive singular
+253:participle future active neuter dative singular
+254:participle future active neuter ablative singular
+255:participle future active neuter nominative plural
+256:participle future active neuter vocative plural
+257:participle future active neuter accusative plural
+258:participle future active neuter genitive plural
+259:participle future active neuter dative plural
+260:participle future active neuter ablative plural
+261:gerund accusative
+262:gerund genitive
+263:gerund dative
+264:gerund ablative
+265:supine in -um
+266:supine in -u
+267:present indicative passive 1st singular
+268:present indicative passive 2nd singular
+269:present indicative passive 3rd singular
+270:present indicative passive 1st plural
+271:present indicative passive 2nd plural
+272:present indicative passive 3rd plural
+273:imperfect indicative passive 1st singular
+274:imperfect indicative passive 2nd singular
+275:imperfect indicative passive 3rd singular
+276:imperfect indicative passive 1st plural
+277:imperfect indicative passive 2nd plural
+278:imperfect indicative passive 3rd plural
+279:future indicative passive 1st singular
+280:future indicative passive 2nd singular
+281:future indicative passive 3rd singular
+282:future indicative passive 1st plural
+283:future indicative passive 2nd plural
+284:future indicative passive 3rd plural
+285:present subjunctive passive 1st singular
+286:present subjunctive passive 2nd singular
+287:present subjunctive passive 3rd singular
+288:present subjunctive passive 1st plural
+289:present subjunctive passive 2nd plural
+290:present subjunctive passive 3rd plural
+291:imperfect subjunctive passive 1st singular
+292:imperfect subjunctive passive 2nd singular
+293:imperfect subjunctive passive 3rd singular
+294:imperfect subjunctive passive 1st plural
+295:imperfect subjunctive passive 2nd plural
+296:imperfect subjunctive passive 3rd plural
+297:present imperative passive 2nd singular
+298:present imperative passive 2nd plural
+299:future imperative passive 2nd singular
+300:future imperative passive 3rd singular
+301:future imperative passive 3rd plural
+302:present infinitive passive
+303:participle perfect passive masculine nominative singular
+304:participle perfect passive masculine vocative singular
+305:participle perfect passive masculine accusative singular
+306:participle perfect passive masculine genitive singular
+307:participle perfect passive masculine dative singular
+308:participle perfect passive masculine ablative singular
+309:participle perfect passive masculine nominative plural
+310:participle perfect passive masculine vocative plural
+311:participle perfect passive masculine accusative plural
+312:participle perfect passive masculine genitive plural
+313:participle perfect passive masculine dative plural
+314:participle perfect passive masculine ablative plural
+315:participle perfect passive feminine nominative singular
+316:participle perfect passive feminine vocative singular
+317:participle perfect passive feminine accusative singular
+318:participle perfect passive feminine genitive singular
+319:participle perfect passive feminine dative singular
+320:participle perfect passive feminine ablative singular
+321:participle perfect passive feminine nominative plural
+322:participle perfect passive feminine vocative plural
+323:participle perfect passive feminine accusative plural
+324:participle perfect passive feminine genitive plural
+325:participle perfect passive feminine dative plural
+326:participle perfect passive feminine ablative plural
+327:participle perfect passive neuter nominative singular
+328:participle perfect passive neuter vocative singular
+329:participle perfect passive neuter accusative singular
+330:participle perfect passive neuter genitive singular
+331:participle perfect passive neuter dative singular
+332:participle perfect passive neuter ablative singular
+333:participle perfect passive neuter nominative plural
+334:participle perfect passive neuter vocative plural
+335:participle perfect passive neuter accusative plural
+336:participle perfect passive neuter genitive plural
+337:participle perfect passive neuter dative plural
+338:participle perfect passive neuter ablative plural
+339:gerundive masculine nominative singular
+340:gerundive masculine vocative singular
+341:gerundive masculine accusative singular
+342:gerundive masculine genitive singular
+343:gerundive masculine dative singular
+344:gerundive masculine ablative singular
+345:gerundive masculine nominative plural
+346:gerundive masculine vocative plural
+347:gerundive masculine accusative plural
+348:gerundive masculine genitive plural
+349:gerundive masculine dative plural
+350:gerundive masculine ablative plural
+351:gerundive feminine nominative singular
+352:gerundive feminine vocative singular
+353:gerundive feminine accusative singular
+354:gerundive feminine genitive singular
+355:gerundive feminine dative singular
+356:gerundive feminine ablative singular
+357:gerundive feminine nominative plural
+358:gerundive feminine vocative plural
+359:gerundive feminine accusative plural
+360:gerundive feminine genitive plural
+361:gerundive feminine dative plural
+362:gerundive feminine ablative plural
+363:gerundive neuter nominative singular
+364:gerundive neuter vocative singular
+365:gerundive neuter accusative singular
+366:gerundive neuter genitive singular
+367:gerundive neuter dative singular
+368:gerundive neuter ablative singular
+369:gerundive neuter nominative plural
+370:gerundive neuter vocative plural
+371:gerundive neuter accusative plural
+372:gerundive neuter genitive plural
+373:gerundive neuter dative plural
+374:gerundive neuter ablative plural
+375:participle perfect active masculine nominative singular
+376:participle perfect active masculine vocative singular
+377:participle perfect active masculine accusative singular
+378:participle perfect active masculine genitive singular
+379:participle perfect active masculine dative singular
+380:participle perfect active masculine ablative singular
+381:participle perfect active masculine nominative plural
+382:participle perfect active masculine vocative plural
+383:participle perfect active masculine accusative plural
+384:participle perfect active masculine genitive plural
+385:participle perfect active masculine dative plural
+386:participle perfect active masculine ablative plural
+387:participle perfect active feminine nominative singular
+388:participle perfect active feminine vocative singular
+389:participle perfect active feminine accusative singular
+390:participle perfect active feminine genitive singular
+391:participle perfect active feminine dative singular
+392:participle perfect active feminine ablative singular
+393:participle perfect active feminine nominative plural
+394:participle perfect active feminine vocative plural
+395:participle perfect active feminine accusative plural
+396:participle perfect active feminine genitive plural
+397:participle perfect active feminine dative plural
+398:participle perfect active feminine ablative plural
+399:participle perfect active neuter nominative singular
+400:participle perfect active neuter vocative singular
+401:participle perfect active neuter accusative singular
+402:participle perfect active neuter genitive singular
+403:participle perfect active neuter dative singular
+404:participle perfect active neuter ablative singular
+405:participle perfect active neuter nominative plural
+406:participle perfect active neuter vocative plural
+407:participle perfect active neuter accusative plural
+408:participle perfect active neuter genitive plural
+409:participle perfect active neuter dative plural
+410:participle perfect active neuter ablative plural
+411:comparative
+412:superlative
+413:locative
+414:positive
+415:future infinitive active
+416:inv.
