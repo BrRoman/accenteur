@@ -315,6 +315,13 @@ function search_quantified(word){
         /(\S*)([aeiou])stis/.exec(word);
         found.push(RegExp.$1 + longs[vowels.indexOf(RegExp.$2)] + "stĭs");
     }
+
+    // A word in "-isse*" can be a syncopated form ("audissent" for "audiissent"):
+    if(word.length > 5 && word.indexOf("isse") > word.length - 7){
+        /(\S*)isse(.{0,2})/.exec(word);
+        found.push(RegExp.$1 + "īsse" + RegExp.$2);
+    }
+
     return(found);
 }
 
