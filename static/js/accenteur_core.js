@@ -73,6 +73,19 @@ function accentify(word, uppercase){
             found.push(s);
         }
     }
+    if(word.indexOf("all") == 0 || new_word_all.indexOf("all") == 0){
+        prefix = "all";
+        new_word = word.replace(/^agg/g, "adl");
+        new_word_all = new_word_all.replace(/^all/g, "adl");
+        sub_found = search_quantified(new_word);
+        for(var i = 0; i < sub_found.length; i++){
+            s = sub_found[i];
+            if(s != ""){
+                s = s.replace(/^([aāă])dl/g, "$1ll");
+            }
+            found.push(s);
+        }
+    }
     if(word.indexOf("arr") == 0 || new_word_all.indexOf("arr") == 0){
         prefix = "arr";
         new_word = word.replace(/^arr/g, "adr");
@@ -199,17 +212,20 @@ function accentify(word, uppercase){
                     case "acc":
                         s = s.replace(/^([aāă])dc/g, "$1cc");
                     break;
-                    case "ass":
-                        s = s.replace(/^([aāă])ds/g, "$1ss");
-                    break;
                     case "aff":
                         s = s.replace(/^([aāă])df/g, "$1ff");
                     break;
                     case "agg":
                         s = s.replace(/^([aāă])dg/g, "$1gg");
                     break;
+                    case "all":
+                        s = s.replace(/^([aāă])dl/g, "$1ll");
+                    break;
                     case "arr":
                         s = s.replace(/^([aāă])dr/g, "$1rr");
+                    break;
+                    case "ass":
+                        s = s.replace(/^([aāă])ds/g, "$1ss");
                     break;
                     case "ex":
                         s = s.replace(/^([eēĕ])xs/g, "$1x");
@@ -281,6 +297,7 @@ function search_quantified(word){
                     for(var k = 0; k < terminations[term].length; k++){
                         t = terminations[term][k]
                         if(t[1] == model && t[2] == num_root){
+                            console.log(quantified);
                             found.push(quantified + t[0]);
                         }
                     }
@@ -320,7 +337,7 @@ function qty_to_accent(plain, quantified){
         if(c != "̆"){
             // 1. Vowels without quantities:
             if(vowels.indexOf(c) != -1){
-                // Vowel without quantity is considered as a breve, except "u" after "q", "u" between "g" and a vowel, "i" before "u", and "e" after "ā" (because "sāeculum" is different of "āĕris"):
+                // Vowel without quantity is considered as a breve, except "u" after "a" or "q", "u" between "g" and a vowel, "i" before "u", and "e" after "ā" (because "sāeculum" is different of "āĕris"):
                 if((c == "u" && ["Q", "q"].indexOf(b) != -1) || (c == "e" && dequantify(b) == "a")){
                     quantities[i] = "0";
                 }
