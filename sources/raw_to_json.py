@@ -68,7 +68,7 @@ def long_by_position(word):
     for c in range(len(word) - 2):
         if word[c] in vowels:
             if (word[c + 1] in consonantics and word[c + 2] in consonantics) and not (word[c + 1] in begadkefat and word[c + 2] in liquids):
-                if not ((word[c] == "e") and (word[c - 1] in ["ā", "ō"])): #If "āe" or "ōe", don't set "e" long.
+                if not ((word[c] in ["e", "u"]) and (word[c - 1] in ["ā", "ō"])): #If "āe" or "ōe" or "āu", don't set word[c] long.
                     word = word[:c] + longs[vowels.index(word[c])] + word[c + 1:]
     return word
 
