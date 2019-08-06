@@ -129,10 +129,10 @@ function accentify(word, uppercase){
     var encl = ["que", "ne", "ve", "dam", "quam", "libet"];
     for(var i = 0; i < encl.length; i++){
         var e = encl[i];
-        if(word.length > e.length && word.indexOf(e) == word.length - e.length){
+        if(word.length > e.length && word.indexOf(e, word.length - e.length - 1) == word.length - e.length){
             var enclitic = e;
-            new_word = word.substring(0, word.indexOf(e));
-            new_word_all = new_word_all.substring(0, new_word_all.indexOf(e));
+            new_word = word.substring(0, word.indexOf(e, word.length - e.length - 1));
+            new_word_all = new_word_all.substring(0, new_word_all.indexOf(e, word.length - e.length - 1));
             sub_found = search_quantified(new_word);
             for(var j = 0; j < sub_found.length; j++){
                 s = sub_found[j];
