@@ -45,6 +45,9 @@ $("document").ready(function(){
                         var word_right = span_choice.text().split("?")[1];
                         $("#choice_dialog").html(choice_html(word_left, word_right));
                         $("#choice_dialog").dialog("open");
+                        $(".ui-dialog").mouseleave(function(){
+                            $("#choice_dialog").dialog("close");
+                        });
 
                         // On validation of choice:
                         $("#validate_choice").click(function(){
