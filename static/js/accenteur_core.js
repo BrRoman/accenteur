@@ -125,6 +125,19 @@ function accentify(word, uppercase){
             found.push(s);
         }
     }
+    if(word.indexOf("coll") == 0 || new_word_all.indexOf("coll") == 0){
+        prefix = "coll";
+        new_word = word.replace(/^coll/g, "conl");
+        new_word_all = new_word_all.replace(/^coll/g, "conl");
+        sub_found = search_quantified(new_word);
+        for(var i = 0; i < sub_found.length; i++){
+            s = sub_found[i];
+            if(s != ""){
+                s = s.replace(/^conl/g, "coll");
+            }
+            found.push(s);
+        }
+    }
     // Enclitic? Delete it:
     var encl = ["que", "ne", "ve", "dam", "quam", "libet"];
     for(var i = 0; i < encl.length; i++){
@@ -229,6 +242,9 @@ function accentify(word, uppercase){
                     break;
                     case "ex":
                         s = s.replace(/^([eēĕ])xs/g, "$1x");
+                    break;
+                    case "coll":
+                        s = s.replace(/^conl/g, "coll");
                     break;
                 }
             }
