@@ -138,6 +138,19 @@ function accentify(word, uppercase){
             found.push(s);
         }
     }
+    if(word.indexOf("obc") == 0 || new_word_all.indexOf("obc") == 0){
+        prefix = "obc";
+        new_word = word.replace(/^obc/g, "occ");
+        new_word_all = new_word_all.replace(/^obc/g, "occ");
+        sub_found = search_quantified(new_word);
+        for(var i = 0; i < sub_found.length; i++){
+            s = sub_found[i];
+            if(s != ""){
+                s = s.replace(/^occ/g, "obc");
+            }
+            found.push(s);
+        }
+    }
     // Enclitic? Delete it:
     var encl = ["que", "ne", "ve", "dam", "quam", "libet"];
     for(var i = 0; i < encl.length; i++){
@@ -245,6 +258,9 @@ function accentify(word, uppercase){
                     break;
                     case "coll":
                         s = s.replace(/^conl/g, "coll");
+                    break;
+                    case "obc":
+                        s = s.replace(/^occ/g, "obc");
                     break;
                 }
             }
