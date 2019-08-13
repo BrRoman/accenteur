@@ -8,7 +8,10 @@ var accented = ["á", "é", "í", "ó", "ú", "ý"];
 var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "X", "Y", "Z"];
 var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "x", "y", "z"];
 
-function accentify(word, uppercase){
+function accentify(word){
+    // Return the case of the word:
+    var uppercase = is_uppercase(word);
+
     // Return the possible accented versions of the word:
     var found = search_quantified(word);
     
