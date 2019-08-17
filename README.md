@@ -29,7 +29,16 @@ Great thanks to [Philippe Verkerk](https://github.com/PhVerkerk) from Collatinus
 
 # For developers
 
-Here are some details about the code.
+The most important files are `static/js/data.js` and `static/js/accenteur_core.js`. If you want to integrate Accenteur in your own web application, just copy those files where you want, and integrate them into your html page, like this:
+
+    <script src="path/to/data.js">
+    <script src="path/to/accenteur_core.js">
+
+Then you can accentify any latin word in another JS file, calling the `accentify` function:
+
+    accentify("vidimus"); // Expected output: "vídimus".
+
+Below are some details about the code.
 
 ### Algorithm
 The algorithm is quite simple in its outlines:
