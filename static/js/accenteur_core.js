@@ -141,6 +141,19 @@ function accentify(word){
             found.push(s);
         }
     }
+    if(word.indexOf("con") == 0 || new_word_all.indexOf("con") == 0){
+        prefix = "con";
+        new_word = word.replace(/^con/g, "com");
+        new_word_all = new_word_all.replace(/^con/g, "com");
+        sub_found = search_quantified(new_word);
+        for(var i = 0; i < sub_found.length; i++){
+            s = sub_found[i];
+            if(s != ""){
+                s = s.replace(/^com/g, "con");
+            }
+            found.push(s);
+        }
+    }
     if(word.indexOf("obc") == 0 || new_word_all.indexOf("obc") == 0){
         prefix = "obc";
         new_word = word.replace(/^obc/g, "occ");
@@ -261,6 +274,9 @@ function accentify(word){
                     break;
                     case "coll":
                         s = s.replace(/^conl/g, "coll");
+                    break;
+                    case "con":
+                        s = s.replace(/^con/g, "com");
                     break;
                     case "obc":
                         s = s.replace(/^occ/g, "obc");
