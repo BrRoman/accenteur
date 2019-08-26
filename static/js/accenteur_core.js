@@ -115,6 +115,19 @@ function accentify(word){
             found.push(s);
         }
     }
+    if(word.indexOf("att") == 0 || new_word_all.indexOf("att") == 0){
+        prefix = "att";
+        new_word = word.replace(/^att/g, "adt");
+        new_word_all = new_word_all.replace(/^att/g, "adt");
+        sub_found = search_quantified(new_word);
+        for(var i = 0; i < sub_found.length; i++){
+            s = sub_found[i];
+            if(s != ""){
+                s = s.replace(/^([aāă])dt/g, "$1tt");
+            }
+            found.push(s);
+        }
+    }
     if((word.indexOf("ex") == 0 || new_word_all.indexOf("ex") == 0) && word.indexOf("s") != 2){
         prefix = "ex";
         new_word = word.replace(/^ex/g, "exs");
@@ -268,6 +281,9 @@ function accentify(word){
                     break;
                     case "ass":
                         s = s.replace(/^([aāă])ds/g, "$1ss");
+                    break;
+                    case "att":
+                        s = s.replace(/^([aāă])dt/g, "$1tt");
                     break;
                     case "ex":
                         s = s.replace(/^([eēĕ])xs/g, "$1x");
