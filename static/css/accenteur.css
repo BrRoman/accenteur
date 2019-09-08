@@ -19,6 +19,14 @@ h3{
     text-align: center;
 }
 
+.word_checked_and_false{
+    color: green;
+}
+
+.red{
+    color: red;
+}
+
 .text_area{
     background-color: white;
     border: 1px solid grey;
@@ -29,10 +37,6 @@ h3{
     margin-top: 0px;
     overflow: scroll;
     width: 450px;
-}
-
-.red{
-    color: red;
 }
 
 #input{
