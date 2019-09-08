@@ -364,7 +364,6 @@ function search_quantified(word){
                     for(var k = 0; k < terminations[term].length; k++){
                         t = terminations[term][k]
                         if(t[1] == model && t[2] == num_root){
-                            console.log(quantified);
                             found.push(quantified + t[0]);
                         }
                     }
