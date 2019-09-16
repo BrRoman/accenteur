@@ -573,8 +573,10 @@ function count_vowels(word){
     for(var i = 0; i < word.length; i++){
         if(vowels.indexOf(word[i]) != -1){
             if(!(word[i] == "u"  && ["q", "Q"].indexOf(word[i - 1]) != -1)){
-                if(!(word[i] == "u"  && ["g", "G"].indexOf(word[i - 1]) != -1 && vowels.indexOf(word[i + 1]) != -1)){
-                    num_v ++;
+                if(!(word[i] == "u"  && ["i", "I"].indexOf(word[i - 1]) != -1)){
+                    if(!(word[i] == "u"  && ["g", "G"].indexOf(word[i - 1]) != -1 && vowels.indexOf(word[i + 1]) != -1)){
+                        num_v ++;
+                    }
                 }
             }
         }
