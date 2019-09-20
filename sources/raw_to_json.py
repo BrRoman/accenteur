@@ -235,6 +235,7 @@ for l in lemmes_lines:
             canonicals.pop(0)
         for canonical in canonicals:
             canonical = canonical[0:-1] if (canonical.endswith("2") or canonical.endswith("3") or canonical.endswith("4")) else canonical
+            canonical = canonical.replace("\u0306", "")
             for c in canonical.split(","):
                 for num_root in model["roots"]:
                     if splinters[1] == "inv":
