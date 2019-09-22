@@ -625,13 +625,16 @@ function reduce(this_array){
 
 // Returns a word with his last vowel long (useful with enclitics):
 function last_long(word){
-    for(i = 0; i < vowels.length; i++){
-        regex = new RegExp(longs[i], "g");
-        word = word.replace(regex, vowels[i]);
-        regex = new RegExp(breves[i], "g");
-        word = word.replace(regex, vowels[i]);
+    if(count_vowels(word) > 2){
+        for(i = 0; i < vowels.length; i++){
+            regex = new RegExp(longs[i], "g");
+            word = word.replace(regex, vowels[i]);
+            regex = new RegExp(breves[i], "g");
+            word = word.replace(regex, vowels[i]);
+        }
+        /(\S*)([aeiouy])([bcdfghjklmnpqrstvxz]*)/.exec(word);
+        return(RegExp.$1 + longs[vowels.indexOf(RegExp.$2)] + RegExp.$3);
     }
-    /(\S*)([aeiouy])([bcdfghjklmnpqrstvxz]*)/.exec(word);
-    return(RegExp.$1 + longs[vowels.indexOf(RegExp.$2)] + RegExp.$3);
+    return(word);
 }
 
