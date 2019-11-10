@@ -242,8 +242,8 @@ function accentify(word){
         }
     }
     // æ, œ:
-    new_word = word.replace("æ", "ae").replace("Æ", "ae").replace("œ", "oe");
-    new_word_all = new_word_all.replace("æ", "ae").replace("Æ", "Ae").replace("œ", "oe");
+    new_word = word.replace(/æ/g, "ae").replace(/Æ/g, "ae").replace(/œ/g, "oe");
+    new_word_all = new_word_all.replace(/æ/g, "ae").replace(/Æ/g, "ae").replace(/œ/g, "oe");
     if(new_word != word){
         has_æœ = true;
         sub_found = search_quantified(new_word);
@@ -393,8 +393,8 @@ function search_quantified(word){
 
 // Converts a quantified word into an accented one:
 function qty_to_accent(plain, quantified){
-    plain = plain.replace("æ", "ae").replace("Æ", "Ae").replace("œ", "oe");
-    quantified = quantified.replace("æ", "ae").replace("Æ", "Ae").replace("œ", "oe");
+    plain = plain.replace(/æ/g, "ae").replace(/Æ/g, "ae").replace(/œ/g, "oe");
+    quantified = quantified.replace(/æ/g, "ae").replace(/Æ/g, "ae").replace(/œ/g, "oe");
     var with_accents = plain;
     var plain_split = plain.split("");
     var quantified_split = quantified.split("");
