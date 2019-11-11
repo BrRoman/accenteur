@@ -77,7 +77,7 @@ accenteur_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Delete the contents of data.js:
 this_file = open(accenteur_dir + "/static/js/data.js", "w", encoding="utf-8")
-this_file.write("");
+this_file.write("")
 this_file.close()
 
 
