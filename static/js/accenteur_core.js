@@ -393,8 +393,8 @@ function search_quantified(word){
 
 // Converts a quantified word into an accented one:
 function qty_to_accent(plain, quantified){
-    plain = plain.replace(/æ/g, "ae").replace(/Æ/g, "ae").replace(/œ/g, "oe");
-    quantified = quantified.replace(/æ/g, "ae").replace(/Æ/g, "ae").replace(/œ/g, "oe");
+    plain = plain.replace(/æ/g, "ae").replace(/Æ/g, "Ae").replace(/œ/g, "oe");
+    quantified = quantified.replace(/æ/g, "ae").replace(/Æ/g, "Ae").replace(/œ/g, "oe");
     var with_accents = plain;
     var plain_split = plain.split("");
     var quantified_split = quantified.split("");
