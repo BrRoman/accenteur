@@ -410,13 +410,20 @@ function qty_to_accent(plain, quantified){
         if(c != "̆"){
             // 1. Vowels without quantities:
             if(vowels.indexOf(c) != -1){
-                // Vowel without quantity is considered as a breve, except "u" after "a" or "q", "u" between "g" and a vowel, "i" before "u", and "e" after "ā" (because "sāeculum" is different of "āĕris"):
-                if((c == "u" && ["Q", "q"].indexOf(b) != -1) || (c == "e" && dequantify(b) == "a")){
+                // Vowel without quantity is considered as a breve, except:
+                // - "u" after "a" or "q":
+                if(c == "u" && ["A", "a", "Q", "q"].indexOf(dequantify(b)) != -1){
                     quantities[i] = "0";
                 }
+                // - "e" after "ā" (*plain* "e", because "sāeculum" is different of "āĕris"):
+                else if(c == "e" && dequantify(b) == "a"){
+                    quantities[i] = "0";
+                }
+                // - "u" between "g" and a vowel:
                 else if(c == "u" && b == "g" && vowels.indexOf(dequantify(d)) != -1){
                     quantities[i] = "0";
                 }
+                // - "i" before "u":
                 else if(c == "i" && dequantify(d) == "u"){
                     quantities[i] = "0";
                 }
