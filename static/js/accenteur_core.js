@@ -575,14 +575,15 @@ function dequantify(vowel){
 }
 
 // Counts the number of vowels in a word:
-function count_vowels(word){
+function count_vowels(word) {
     var num_v = 0;
-    for(var i = 0; i < word.length; i++){
-        if(vowels.indexOf(word[i]) != -1){
-            if(!(word[i] == "u"  && ["q", "Q"].indexOf(word[i - 1]) != -1)){
-                if(!(word[i] == "u"  && ["i", "I"].indexOf(word[i - 1]) != -1)){
-                    if(!(word[i] == "u"  && ["g", "G"].indexOf(word[i - 1]) != -1 && vowels.indexOf(word[i + 1]) != -1)){
-                        num_v ++;
+    for (var i = 0; i < word.length; i++) {
+        var vowel = dequantify(word[i]);
+        if (vowels.indexOf(vowel) != -1) {
+            if (!(vowel == "u" && ["q", "Q"].indexOf(word[i - 1]) != -1)) {
+                if (!(vowel == "u" && ["i", "I"].indexOf(word[i - 1]) != -1)) {
+                    if (!(vowel == "u" && ["g", "G"].indexOf(word[i - 1]) != -1 && vowels.indexOf(word[i + 1]) != -1)) {
+                        num_v++;
                     }
                 }
             }
