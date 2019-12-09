@@ -565,12 +565,13 @@ function dequantify(vowel) {
 function count_vowels(word) {
     var num_v = 0;
     for (var i = 0; i < word.length; i++) {
-        var vowel = dequantify(word[i]);
-        if (vowels.indexOf(vowel) != -1) {
-            if (!(vowel == "u" && ["q", "Q"].indexOf(word[i - 1]) != -1)) {
-                if (!(vowel == "u" && ["i", "I"].indexOf(word[i - 1]) != -1)) {
-                    if (!(vowel == "u" && ["g", "G"].indexOf(word[i - 1]) != -1 && vowels.indexOf(word[i + 1]) != -1)) {
-                        num_v++;
+        if (vowels.indexOf(dequantify(word[i])) != -1) {
+            if (!(dequantify(word[i]) == "u" && ["q", "Q"].indexOf(word[i - 1]) != -1)) {
+                if (!(dequantify(word[i]) == "u" && ["i", "I"].indexOf(dequantify(word[i - 1])) != -1)) {
+                    if (!(dequantify(word[i]) == "u" && ["g", "G"].indexOf(word[i - 1]) != -1 && vowels.indexOf(word[i + 1]) != -1)) {
+                        if (!(word[i] == "e" && dequantify(word[i - 1]) == "a")) {
+                            num_v++;
+                        }
                     }
                 }
             }
