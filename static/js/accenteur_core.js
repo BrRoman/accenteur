@@ -198,14 +198,11 @@ function accentify(word) {
             }
         }
     }
-    // J? If the word begins with a "i" (or "I") + vowel, or contains a "i" between 2 vowels, or begins with prefix + "i", then replace it with "j" (or "J"):
-    var new_word = word;
+    // J? If the word begins with a "i" + vowel, or contains a "i" between 2 vowels, or begins with prefix + "i", then replace it with "j":
+    var new_word = is_uppercase(word) ? to_lowercase(word) : word;
     var regex = /^i([aeiouy])/g;
     new_word = new_word.replace(regex, "j$1");
     new_word_all = new_word_all.replace(regex, "j$1");
-    var regex = /^I([aeiouy])/g;
-    new_word = new_word.replace(regex, "J$1");
-    new_word_all = new_word_all.replace(regex, "J$1");
     var regex = /([aeiouy])i([aeiouy])/g;
     new_word = new_word.replace(regex, "$1j$2");
     new_word_all = new_word_all.replace(regex, "$1j$2");
@@ -236,7 +233,7 @@ function accentify(word) {
         for (var i = 0; i < sub_found.length; i++) {
             s = sub_found[i];
             if (s != "") {
-                s = s.replace("j", "i").replace("J", "I");
+                s = s.replace("j", "i");
             }
             found.push(s);
         }
@@ -303,7 +300,7 @@ function accentify(word) {
                 s = last_long(s) + enclitic;
             }
             if (with_j) {
-                s = s.replace("j", "i").replace("J", "I");
+                s = s.replace("j", "i");
             }
             found.push(s);
 
