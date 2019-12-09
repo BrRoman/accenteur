@@ -621,7 +621,7 @@ function reduce(this_array) {
 
 // Returns a word with his last vowel long (useful with enclitics):
 function last_long(word) {
-    if (count_vowels(word) > 2) {
+    if (word.substring(word.length - 2, word.length) != "āe") {
         for (i = 0; i < vowels.length; i++) {
             regex = new RegExp(longs[i], "g");
             word = word.replace(regex, vowels[i]);
