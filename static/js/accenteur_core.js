@@ -78,7 +78,7 @@ function accentify(word) {
     }
     if (word.indexOf("all") == 0 || new_word_all.indexOf("all") == 0) {
         prefix = "all";
-        new_word = word.replace(/^agg/g, "adl");
+        new_word = word.replace(/^all/g, "adl");
         new_word_all = new_word_all.replace(/^all/g, "adl");
         sub_found = search_quantified(new_word);
         for (var i = 0; i < sub_found.length; i++) {
