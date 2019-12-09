@@ -469,8 +469,8 @@ function qty_to_accent(plain, quantified) {
             if (c == "u" && b == "g" && vowels.indexOf(dequantify(d)) != -1) {
                 new_syllable = false;
             }
-            // No if it is a "i" in the beginning of a world and followed by a "o" or a "u" (Ioseph, iusti):
-            if (["i", "I"].indexOf(dequantify(c)) != -1 && i == 0 && ["o", "u"].indexOf(dequantify(d)) != -1) {
+            // No if it is a "i" in the beginning of a world and followed by ["a", "o", "u"] (Iacob, Ioseph, iusti):
+            if (["i", "I"].indexOf(dequantify(c)) != -1 && i == 0 && ["a", "o", "u"].indexOf(dequantify(d)) != -1) {
                 new_syllable = false;
             }
             // Conclusion:
