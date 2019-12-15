@@ -227,6 +227,9 @@ function accentify(word) {
     // peri*:
     new_word = new_word.replace(/^peri/g, "perj");
     new_word_all = new_word_all.replace(/^peri/g, "perj");
+    // subi*:
+    new_word = new_word.replace(/^subi/g, "subj");
+    new_word_all = new_word_all.replace(/^subi/g, "subj");
     if (new_word != word && count_vowels(new_word) > 2) {
         with_j = true;
         sub_found = search_quantified(new_word);
