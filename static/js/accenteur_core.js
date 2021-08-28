@@ -344,7 +344,7 @@ function search_quantified(word) {
     // We successively split the word into 2 splinters, like this for a word of five letters:
     // |12345, then 1|2345, then 12|345, then 123|45, then 1234|5, then 12345,
     // and each time we search if we find these 2 splinters
-    // in our roots" and terminations" Objects:
+    // in our roots' and terminations' Objects:
     var found = [];
     for (var i = 0; i <= word.length; i++) {
         var root = word.substring(0, i);
