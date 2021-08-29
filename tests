@@ -1,5 +1,5 @@
 //
-This file contains some "borderline cases", useful to check that there is no regression after a change in the code.
+This file contains some "borderline cases", useful to ensure that no regression occurs after a change in the code.
 
 abiuro
 adisse
