@@ -61,8 +61,6 @@ def atone(this_string):
 # Exception:
 # If the 1st consonantic is a 'begadkefat' (hebrew mnemonic), i.e. is in [bgdcpt],
 # and the 2d one is a 'liquid', i.e. is in [lr], then the vowel is common (and thus treated as breve in ecclesiastic context).
-
-
 def long_by_position(word):
     vowels = ["a", "e", "i", "o", "u", "y"]
     longs = ["ā", "ē", "ī", "ō", "ū", "ȳ"]
