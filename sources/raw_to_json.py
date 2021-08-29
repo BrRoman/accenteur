@@ -180,7 +180,7 @@ for l in models_lines:
                         else:
                             if terms_list[0] == "-":
                                 # No termination.
-                                terms_tmp[str(t)].append("-")
+                                terms_tmp[str(t)].append([terms_root, ""])
                             else:
                                 # Be careful: sometimes last term is missing in some models ("ibus" once for both dat. and abl. plur.).
                                 terms_tmp[str(t)].append(
@@ -194,7 +194,7 @@ for l in models_lines:
                         del terms_tmp[s]
                     else:
                         if terms_list[0] == "-":
-                            terms_tmp[s].append("-")  # No termination.
+                            terms_tmp[s].append([terms_root, ""])  # No termination.
                         else:
                             # Be careful: sometimes last term is missing in some models ("ibus" once for both dat. and abl. plur.).
                             terms_tmp[s].append([terms_root, terms_list[i]])
