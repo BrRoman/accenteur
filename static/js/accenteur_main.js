@@ -32,7 +32,7 @@ $("document").ready(function () {
                     if (words[i].length > 2) {
                         words[i] = accentify(words[i]);
                         if (words[i].length == 2) {
-                            words[i] = "<span class='double'>" + words[i].join("<span class='red' style='cursor: pointer;'>?</span>") + "</span>";
+                            words[i] = "<span class='double'>" + words[i].join("<span type='button' class='btn btn-link px-0 red text-decoration-none' data-bs-toggle='modal' data-bs-target='#choice_dialog'>?</span>") + "</span>";
                         } else {
                             words[i] = words[i][0];
                         }
@@ -47,23 +47,10 @@ $("document").ready(function () {
             $("span.red").on({
                 mouseover: function (e) {
                     if ($(this).text().indexOf("?") != -1) {
-                        $("#choice_dialog").dialog({
-                            autoOpen: false,
-                            position: {
-                                my: "left top",
-                                at: "left bottom",
-                                of: e.target
-                            },
-                            title: "Elige tibi formam:",
-                        });
                         var span_choice = $(this).parent();
                         var word_left = span_choice.text().split("?")[0];
                         var word_right = span_choice.text().split("?")[1];
-                        $("#choice_dialog").html(choice_html(word_left, word_right));
-                        $("#choice_dialog").dialog("open");
-                        $(".ui-dialog").mouseleave(function () {
-                            $("#choice_dialog").dialog("close");
-                        });
+                        $('.modal-body').html(choice_html(word_left, word_right));
 
                         // On validation of choice:
                         $("#validate_choice").click(function () {
@@ -94,7 +81,8 @@ $("document").ready(function () {
                                     });
                                 }
                             }
-                            $("#choice_dialog").dialog("close");
+                            $("#choice_dialog").css('display', 'none');// TODO: Better way to delete the modal?
+                            $(".modal-backdrop").css('display', 'none');// TODO: Better way to delete the modal?
                         });
                     }
                 }
@@ -121,7 +109,6 @@ function choice_html(word_left, word_right) {
     html = html + "<input type='radio' name='where' id='ibi' value='ibi' checked>";
     html = html + "<label for='ibi'>Ibi tantum</label><br>";
     html = html + "<input type='radio' name='where' id='ubique' value='ubique'>";
-    html = html + "<label for='ubique'>Ubique in hoc textu</label><br><br>";
-    html = html + "<input type='button' id='validate_choice' value='Confirma'></input>";
+    html = html + "<label for='ubique'>Ubique in hoc textu</label>";
     return (html);
 }
