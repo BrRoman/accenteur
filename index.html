@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html>
-	<head>
+    <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="static/bootstrap-4.0.0-dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="static/jquery-ui-1.12.1/jquery-ui.min.css">
-        <link rel="stylesheet" href="static/fontawesome-free-5.7.1-web/css/all.min.css">
-        <link rel="stylesheet" href="static/css/accenteur.css">
         <link rel="icon" sizes="400x400" href="static/images/accenteur.png">
+        <link rel="stylesheet" href="static/bootstrap-5.2.3-dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="static/fontawesome-free-6.3.0-web/css/all.min.css">
+        <link rel="stylesheet/less" href="static/css/accenteur.less">
         <title>Accenteur</title>
-	</head>
+    </head>
 
-	<body>
+    <body>
         <div id="page">
             <h2>
                 Accenteur
@@ -18,26 +17,41 @@
             <h3>
                 Numericum instrumentum ad latinos textus accentizandos
             </h3>
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div id="input" contenteditable="true" spellcheck="false" class="col-lg-5 col-md-10 text_area">Hic scribe textum tuum…</div>
-                    <div id="output" contenteditable="true" spellcheck="false" class="col-lg-5 col-md-10 text_area"></div>
-                </div>
+            <div id="input_output" class="d-flex mt-3">
+                <div id="input" contenteditable="true" spellcheck="false" class="text_area"><span style="color: grey;">Hic scribe textum tuum…</span></div>
+                <div id="output" contenteditable="true" spellcheck="false" class="text_area"></div>
             </div>
+    
             <div id="overlay">
-                <img src="static/images/wait.gif" style="margin-bottom:20px"></br>
+                <img src={% static 'accenteur/img/wait.gif' %} style="margin-bottom:20px"></br>
                 <p>Afferuntur elementa…</p>
             </div>
-            <div id="choice_dialog"></div>
+    
+            <div class="modal fade" id="choice_dialog" tabindex="-1" aria-labelledby="choice_dialog" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="choice_dialog">Elige tibi formam</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Claudere"></button>
+                    </div>
+                    <div class="modal-body"></div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Claude</button>
+                        <button type="button" id="validate_choice" class="btn btn-primary">Confirma</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
             <a href="https://github.com/BrRoman/accenteur"><span class="fab fa-github" style="color: black; font-size: 18pt;" title="View on Github"></span></a>
         </div>
 
-        <script src="static/jquery-3.3.1.min.js"></script>
-        <script src="static/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
-        <script src="static/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+        <script src="static/js/jquery-3.6.0.min.js"></script>
+        <script src="static/bootstrap-5.2.3-dist/js/bootstrap.bundle.min.js"></script>
+        <script src="static/fontawesome-free-6.3.0-web/js/all.min.js"></script>
+        <script src="static/js/less.min.js"></script>
         <script src="static/js/data.js"></script>
         <script src="static/js/accenteur_core.js"></script>
         <script src="static/js/accenteur_main.js"></script>
-	</body>
+    </body>
 </html>
 
