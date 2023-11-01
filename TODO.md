@@ -3,7 +3,6 @@ Mieux commenter le code.
 Data.js à répartir en sous-dossiers (a, b, c…).
 
 FIXME haeccine/hiccine [! Pull request of Benjamin Bloomfield]
-FIXME Israélis [! Pull request of Benjamin Bloomfield]
 FIXME odium
 
 Mots à ajouter :

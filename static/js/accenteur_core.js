@@ -504,6 +504,8 @@ function qty_to_accent(plain, quantified) {
                             accent_pos = quantities.length - j - 1;
                         } else if (qty == "-") { // "āĕ" like in "áeris".
                             accent_pos = quantities.length - j;
+                        } else if (qty == "+") { // "aē" like in "Israéli".
+                            accent_pos = quantities.length - j;
                         }
                     }
                     // Cases of "oe", "au", "eu": accent on the first letter (except if the second letter is long):
