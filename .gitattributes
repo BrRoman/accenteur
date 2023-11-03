@@ -1,2 +1,4 @@
 static/bootstrap-5.2.3-dist/* linguist-detectable=false
 static/fontawesome-free-6.3.0-web/* linguist-detectable=false
+static/js/less* linguist-detectable=false
+static/js/jquery* linguist-detectable=false
