@@ -202,6 +202,7 @@ ablātĭo=ā̆blātĭo|miles|ā̆blātĭōn|
 ablātīvus=ā̆blātīvus|doctus||
 ablātīvus2=ā̆blātīvus|lupus||
 ablātŏr=ā̆blātŏr|miles|ā̆blātōr|
+ablātrix|miles|ablātrīc|
 ablātus=ā̆blātus|doctus||
 ablēgātĭo=ā̆blēgātĭo|miles|ā̆blēgātĭōn|
 ablēgātus=ā̆blēgātus|doctus||
@@ -307,6 +308,7 @@ abrĕmissa=ā̆brĕmīssa|uita||
 abrĕmissa2=ā̆brĕmīssa|castra||
 abrĕmissĭo=ā̆brĕmīssĭo|miles|ā̆brĕmīssĭōn|
 abrĕnūntĭātĭo=ā̆brĕnūntĭātĭo|miles|ā̆brĕnūntĭātĭōn|
+abrĕnūntĭātor|miles|abrĕnūntĭātōr|
 abrĕnuntĭo=ā̆brĕnūntĭo|amo||
 abreptĭo=ā̆brēptĭo|miles|ā̆brēptĭōn|
 abreptus=ā̆brēptus|doctus||
@@ -416,6 +418,7 @@ abstensŭs=ābstēnsŭs|manus||
 abstentĭo=ābstēntĭo|miles|ābstēntĭōn|
 abstentus=ābstēntus|doctus||
 abstergĕo=ābstērgĕo|moneo|ābstērs|ābstērs
+ābstērgo|lego|ābstērs|ābstērs
 absterno=ābstērno|lego||
 absterrĕo=ābstērrĕo|moneo|ābstērrŭ|ābstērrĭt
 absterrĭtus=ābstērrĭtus|doctus||
@@ -485,6 +488,7 @@ abverto=ābvērto|lego|ābvērt|ābvērs
 ăbȳdos|delos||
 ăbȳdum|templum||
 ăbȳdus|lupus||
+abyssālĭs|ciuis|abyssāl|
 ăbyssus=ăbȳssus|lupus||
 abziritānus=ābziritānus|doctus||
 abzoae=ābzŏāe|epulae||
@@ -2159,6 +2163,7 @@ aedĭcŭla=āedĭcŭla|uita||
 aedĭcŭlum=āedĭcŭlum|templum||
 aedĭfăcĭo=āedĭfăcĭo|capio||
 aedĭfex=āedĭfēx|miles|āedĭfĭc|
+aedificabilis|fortis|aedificabil|
 aedĭfĭcantĕr=āedĭfĭcāntĕr|advr||
 aedĭfĭcātĭo=āedĭfĭcātĭo|miles|āedĭfĭcātĭōn|
 aedĭfĭcātĭuncŭla=āedĭfĭcātĭūncŭla|uita||
@@ -2707,6 +2712,7 @@ af|inv||
 afannae=afānnāe|epulae||
 āfer=āfĕr|pulcher|āfr|
 āfer2=āfĕr|ager|āfr|
+affectānter|advr||
 affectātĭo=āffēctātĭō̆|miles|āffēctātĭōn|
 affectōrius=āffēctōrĭus|aureus||
 affictīcĭus=āffīctīcĭus|aureus||
@@ -3333,6 +3339,7 @@ alfaterni=ālfatērni|liberi||
 alfellāni=ālfēllāni|liberi||
 alfēnus=ālfēnus|lupus||
 alfĭus=ālfĭus|filius||
+alfonsus|lupus||
 alga=ālga|uita||
 algae=ālgāe|epulae||
 algens=ālgēns|infans|ālgēnt|
@@ -3558,6 +3565,7 @@ alŏgi|liberi||
 ălŏgĭor=ălŏgĭŏr|imitor||
 ălŏgus|doctus||
 ălōīdae=ălōīdāe|epulae||
+aloisius|lupus||
 ălŏnē|cybele||
 ălōni|liberi||
 ălŏpē|cybele||
@@ -4997,6 +5005,7 @@ ansĕrārĭus=ānsĕrārĭus|filius||
 ansĕrātim=ānsĕrātĭm|adv||
 ansercŭlus=ānsērcŭlus|lupus||
 ansĕrīnus=ānsĕrīnus|doctus||
+ansgarius|lupus||
 ansibarĭi=ānsibarĭi|liberi||
 ansŭla=ānsŭla|uita||
 antăchātēs=āntăchātēs|cometes||
@@ -5793,6 +5802,7 @@ appĕtītŏr=āppĕtītŏr|miles|āppĕtītōr|
 appĕtītōrĭus=āppĕtītōrĭus|aureus||
 appĕtītrīx=āppĕtītrīx|miles|āppĕtītrīc|
 appĕtītŭs=āppĕtītŭs|manus||
+appĕto|lego|āppētĭ,āppētīv|āppētīt
 appĕto2=āppĕto|miles|āppĕtōn|
 appĭa=āppĭa|roma||
 appīa2|roma||
@@ -6912,6 +6922,7 @@ arrĭa=ārrĭa|roma||
 arrīānī=ārrīānī|liberi||
 arrionilla=ārrĭonīlla|roma||
 arrĭpĭdes=ārrĭpĭdes|ciuis|ārrĭpĭd|
+arrĭpĭo|capio|ārrĭpŭ|ārrēpt
 arrīus=ārrīus|lupus||
 arrī̆us2=ārrī̆us|lupus||
 arrŏgātĭo=ārrŏgātĭo|miles|ārrŏgātĭōn|
@@ -7212,6 +7223,7 @@ ascordus=āscōrdus|lupus||
 ascra=āscra|roma||
 ascraeus=āscrāeus|doctus||
 ascraeus2=āscrāeus|lupus||
+ascrībo|lego|āscrīps|āscrīpt
 ascriptīcĭus=āscrīptīcĭus|aureus||
 ascriptĭo=āscrīptĭo|miles|āscrīptĭōn|
 ascrīptīvī=āscrīptīvī|liberi||
@@ -7544,6 +7556,7 @@ astigītānus=āstigītānus|doctus||
 astĭi=āstĭi|liberi||
 astīle=āstīle|mare|āstīl|
 astĭlūcus=āstĭlūcus|doctus||
+asto|amo|āstĭt|
 astŏmăchētus=āstŏmăchētus|doctus||
 astŏmi=āstŏmi|liberi||
 astŏsabas=āstŏsabas|aeneas||
@@ -7577,6 +7590,7 @@ astrĭfĭcus=āstrĭfĭcus|doctus||
 astrĭgĕr=āstrĭgĕr|miser|āstrĭgĕr|
 astrĭlŏquus=āstrĭlŏquus|doctus||
 astrĭlūcus=āstrĭlūcus|doctus||
+astringo|lego|āstrīnx|āstrīct
 astrĭŏn=āstrĭŏn|ilion||
 astrĭŏs=āstrĭŏs|delos||
 astrĭōtēs=āstrĭōtēs|cometes||
@@ -9489,6 +9503,8 @@ bergusia=bērgusĭa|roma||
 bergusĭtānus=bērgusĭtānus|doctus||
 bērillus=bērīllus|lupus||
 berna=bērna|uita||
+bernardinus|lupus||
+bernardus|lupus||
 bernīcē=bērnīcē|cybele||
 bĕrŏa|roma||
 bĕrŏē|cybele||
@@ -9808,6 +9824,7 @@ bĭpŏtens=bĭpŏtēns|infans|bĭpŏtēnt|
 bĭprōrus|doctus||
 bĭrēmis=bĭrēmĭs|fortis|bĭrēm|
 bĭrēmis2|ciuis|bĭrēm|
+birgītta|uita||
 biriciana=biricĭana|roma||
 bĭrŏta|uita||
 bĭrŏtus|doctus||
@@ -10129,6 +10146,7 @@ bŏnae=bŏnāe|epulae||
 bonanimĭs|ciuis|bonanim|
 bŏnāsus|lupus||
 bŏnātus|doctus||
+bonaventūra|uita||
 bonconĭca=bōnconĭca|roma||
 bŏnĕ|adv||
 bŏnĕmĕmŏrĭus|aureus||
@@ -10509,6 +10527,7 @@ brundĭsĭum=brūndĭsĭŭm,brūndŭsĭŭm|arpinum||
 brundŭlus=brūndŭlus|lupus||
 brundŭsīnus=brūndŭsīnus|doctus||
 brunicus|lupus||
+bruno|miles|brunōn|
 bruscum=brūscum|templum||
 brūta|uita||
 brutalĭa|moenia|brutal|
@@ -10616,6 +10635,7 @@ buccŭla=būccŭla|uita||
 buccŭlāre=būccŭlāre|mare|būccŭlār|
 buccŭlārĭus=būccŭlārĭus|filius||
 buccŭlentus=būccŭlēntus|doctus||
+būcēlla|uita||
 būcĕphăla|roma||
 būcĕphăla2|uita||
 būcĕphăla3|castra||
@@ -12586,6 +12606,7 @@ carocotinum|templum||
 caroecārectum=carōecārēctum|templum||
 caroenāria=carōenārĭa|uita||
 căroenum=cărōenum|templum||
+carolus|lupus||
 caroni|liberi||
 cărŏs|delos||
 cărōta|uita||
@@ -12679,6 +12700,7 @@ carthāgĭnĭensis=cārthāgĭnĭēnsĭs|fortis|cārthāgĭnĭēns|
 carthāgō=cārthāgō|miles|cārthāgĭn|
 carthēĭus=cārthēĭus|aureus||
 carthēus=cārthēus|doctus||
+carthusiēnsis|fortis|carthusiēns|
 cartĭblum=cārtĭblum|templum||
 cartĭbŭlum=cārtĭbŭlum|templum||
 cartĭbum=cārtĭbum|templum||
@@ -12755,6 +12777,7 @@ căsĭlīnenses=căsĭlīnēnses|manes|căsĭlīnēns|
 căsĭlīnum|templum||
 căsĭlīnus|doctus||
 căsĭna|roma||
+casimīrus|lupus||
 căsīnās|miles|căsīnāt|
 căsīnum|templum||
 căsīnus|doctus||
@@ -14473,10 +14496,12 @@ christĭānus2=chrīstĭānus|lupus||
 christĭcŏla=chrīstĭcŏla|roma||
 chrīstĭcŏlus|doctus||
 chrīstĭfĕr|miser|chrīstĭfĕr|
+christifĭdēlis|fortis|christifĭdēl|
 christĭgĕnus=chrīstĭgĕnus|doctus||
 christĭpŏtens=chrīstĭpŏtēns|infans|chrīstĭpŏtēnt|
 chrīstŏlŏgus|lupus||
 christŏtŏcŏs=chrīstŏtŏcŏs|delos||
+christophorus|lupus||
 christus=chrīstus|lupus||
 chrīstus2|doctus||
 chrōcălē|cybele||
@@ -14544,6 +14569,7 @@ chrȳsŏlampis=chrȳsŏlāmpis|miles|chrȳsŏlāmpĭd|
 chrȳsŏlāus|lupus||
 chrȳsŏlĭthŏs|delos||
 chrȳsŏlĭthus|doctus||
+chrysologus|lupus||
 chrȳsŏmallus=chrȳsŏmāllus|lupus||
 chrȳsŏmēlĭnum|templum||
 chrȳsŏmēlĭnus|doctus||
@@ -15315,6 +15341,7 @@ cistella=cīstēlla|uita||
 cistellārĭa=cīstēllārĭa|roma||
 cistellātrix=cīstēllātrīx|miles|cīstēllātrīc|
 cistellŭla=cīstēllŭla|uita||
+cisterciēnsĭs|fortis|cisterciēns|
 cisterna=cīstērna|uita||
 cisternīnus=cīstērnīnus|doctus||
 cisthēna=cīsthēna|roma||
@@ -16610,6 +16637,7 @@ cŏlumbīni=cŏlūmbīni|liberi||
 cŏlumbīnus=cŏlūmbīnus|doctus||
 cŏlumbor=cŏlūmbŏr|imitor||
 cŏlumbŭla=cŏlūmbŭla|uita||
+columbānus|lupus||
 cŏlumbŭlātim=cŏlūmbŭlātĭm|adv||
 cŏlumbŭlus=cŏlūmbŭlus|lupus||
 cŏlumbus=cŏlūmbus|lupus||
@@ -16951,6 +16979,7 @@ commŏdĭtās=cōmmŏdĭtās|miles|cōmmŏdĭtāt|
 commŏdĭus=cōmmŏdĭus|aureus||
 commŏdo=cōmmŏdo|amo||
 commŏdŏ2=cōmmŏdŏ|inv||
+commodōsus|doctus||
 commŏdŭlātĭo=cōmmŏdŭlātĭo|miles|cōmmŏdŭlātĭōn|
 commŏdŭlē=cōmmŏdŭlē|adve||
 commŏdŭlum=cōmmŏdŭlum|templum||
@@ -18338,6 +18367,7 @@ conquīsītŏr=cōnquīsītŏr|miles|cōnquīsītōr|
 conquīsītus=cōnquīsītus|doctus||
 conquistor=cōnquīstŏr|miles|cōnquīstōr|
 conrĕgĭōnĕ=cōnrĕgĭōnĕ|adv||
+cōnrēgno|amo||
 consabrum=cōnsā̆brum|templum||
 consaburenses=cōnsaburēnses|manes|cōnsaburēns|
 consaburensis=cōnsaburēnsĭs|fortis|cōnsaburēns|
@@ -21377,6 +21407,7 @@ dămăsus|lupus||
 damēa|roma||
 damēn|miles|damēn|
 damĭa|roma||
+damiānus|lupus||
 dāmĭātrix=dāmĭātrīx|miles|dāmĭātrīc|
 dāmĭo|miles|dāmĭōn|
 dāmĭum|templum||
@@ -23560,6 +23591,7 @@ dĭăcōdīōn|ilion||
 dĭăcolēa|uita||
 dĭācōn|miles|dĭācŏn|
 dĭācŏna|uita||
+diaconālis|fortis|diaconāl|
 dĭācŏnātŭs|manus||
 dĭācŏnĭa|uita||
 dĭācŏnĭcum|templum||
@@ -24526,6 +24558,7 @@ dispendĭum=dīspēndĭŭm|templum||
 dispendo=dīspēndo|lego|dīspēnd|dīspēns
 dispendo2=dīspēndo|lego||dīspēns
 dispenno=dīspēnno|lego||dīspēss
+dispensanter|advr||
 dispensātĭo=dīspēnsātĭo|miles|dīspēnsātĭōn|
 dispensātīvē=dīspēnsātīvē|adve||
 dispensātīvus=dīspēnsātīvus|doctus||
@@ -25976,6 +26009,7 @@ edēta|roma||
 ēdoctus=ēdōctus|doctus||
 ēdŏlo|amo||
 edom=edŏm|inv||
+edomatio|miles|edomatiōn|
 ēdŏmātus|doctus||
 ēdŏmĭno|amo||
 ēdŏmĭto|amo||
@@ -26123,6 +26157,7 @@ effŏdĭo=ēffŏdĭo,ēxfŏdĭo|capio|ēffōd,ēxfōd|ēffōss,ēxfōss
 effoecundo=ēffōecūndo|amo||
 effoedo=ēffōedo|amo||
 effor=ēffŏr|imitor||
+effōrmo|amo||
 effŏro=ēffŏro|amo||
 efforus=ēfforus|doctus||
 effossĭo=ēffōssĭo|miles|ēffōssĭōn|
@@ -31231,6 +31266,7 @@ fonĭo|miles|fonĭōn|
 fons=fōns|ciuis|fōnt|
 fons2=fōns|ciuis|fōnt|
 fontālis=fōntālĭs|fortis|fōntāl|
+fontaliter|advr||
 fontāna=fōntāna|uita||
 fontānālĭa=fōntānālĭa|moenia|fōntānāl|
 fontānālis=fōntānālĭs|fortis|fōntānāl|
@@ -31736,7 +31772,10 @@ frūgĭperda=frūgĭpērda|uita||
 frūgĭperdĭa=frūgĭpērdĭa|uita||
 frūgĭperdus=frūgĭpērdus|doctus||
 frūgĭus|aureus||
+fruibilis|fortis|fruibil|
+fruibiliter|advr||
 frŭĭtĭo|miles|frŭĭtĭōn|
+fruitīvus|doctus||
 frŭĭtūrus|doctus||
 frūmĕn|corpus|frūmĭn|
 frūmēntācĕus|aureus||
@@ -32467,6 +32506,7 @@ gaudĭbundus=gāudĭbūndus|doctus||
 gaudĭfĭco=gāudĭfĭco|amo||
 gaudĭmōnĭum=gāudĭmōnĭum|templum||
 gaudĭōsus=gāudĭōsus|lupus||
+gaudiōsus2|doctus||
 gaudĭum=gāudĭŭm|templum||
 gaudĭvĭgens=gāudĭvĭgēns|infans|gāudĭvĭgēnt|
 gaudŏs=gāudŏs|delos||
@@ -32832,6 +32872,7 @@ gerrīnum=gērrīnum|templum||
 gerro=gērro|miles|gērrōn|
 gerrunĭum=gērrunĭum|templum||
 gerson=gērson|inv||
+gertrūdis|fortis|gertrūd|
 gĕrŭla|uita||
 gĕrŭlānus|lupus||
 gerulāta|roma||
@@ -33518,6 +33559,7 @@ grātĭōsē|adve||
 grātĭōsĭtās|miles|grātĭōsĭtāt|
 grātĭōsus|doctus||
 grātīs|inv||
+gratitūdo|miles|gratitudin|
 grātĭus|filius||
 grātō|adv||
 grātor=grātŏr|imitor||
@@ -34230,6 +34272,7 @@ hĕdĕrōsus|doctus||
 hēdŏnē|cybele||
 hēdŭi|liberi||
 hēdŭphăgētĭca|castra||
+hedvīges|ciuis|hedvīg|
 hēdȳ̆chrum|templum||
 hēdycrum=hēdȳ̆crum|templum||
 hēdyphŏs|delos||
@@ -34430,6 +34473,7 @@ hennenses=hēnnēnses|manes|hēnnēns|
 hennensĭs=hēnnēnsĭs|fortis|hēnnēns|
 hĕnōsĭs|ciuis|hĕnōs|
 hĕnŏtēs|miles|hĕnŏtēt|
+henrīcus|lupus||
 hēpăr|corpus|hēpăt|
 hēpătārĭus|aureus||
 hēpătĭa|castra||
@@ -36089,6 +36133,7 @@ igĭlĭum|templum||
 ĭgĭtur=ĭgĭtŭr|inv||
 ignārŭris=īgnārŭrĭs|fortis|īgnārŭr|
 ignārus=īgnārus|doctus||
+ignatĭus|lupus||
 ignāvē=īgnāvē|adve||
 ignāvesco=īgnāvēsco|lego||
 ignāvĭa=īgnāvĭa|uita||
@@ -36280,6 +36325,7 @@ illi=īlli|inv||
 illībābĭlis=īllībābĭlĭs|fortis|īllībābĭl|
 illībātē=īllībātē|adve||
 illībātio=īllībātĭo|miles|īllībātĭōn|
+īllībātus|doctus||
 illībĕrālis=īllībĕrālĭs|fortis|īllībĕrāl|
 illībĕrālĭtās=īllībĕrālĭtās|miles|īllībĕrālĭtāt|
 illībĕrālĭtĕr=īllībĕrālĭtĕr|advr||
@@ -37003,6 +37049,7 @@ impugnāmentum=īmpūgnāmēntum|templum||
 impugnātĭo=īmpūgnātĭo|miles|īmpūgnātĭōn|
 impugnātŏr=īmpūgnātŏr|miles|īmpūgnātōr|
 impugnātus=īmpūgnātus|doctus||
+impūgno|amo||
 impŭlĭtus=īmpŭlĭtus|doctus||
 impulsĭo=īmpūlsĭo|miles|īmpūlsĭōn|
 impulso=īmpūlso|amo||
@@ -37024,6 +37071,7 @@ impūrĭtās=īmpūrĭtās|miles|īmpūrĭtāt|
 impūrĭtĭa=īmpūrĭtĭa|uita||
 impūro=īmpūro|amo||
 impurpŭrātus=īmpūrpŭrātus|doctus||
+impūrus|doctus||
 impŭtātĭo=īmpŭtātĭo|miles|īmpŭtātĭōn|
 impŭtātīvē=īmpŭtātīvē|adve||
 impŭtātīvus=īmpŭtātīvus|doctus||
@@ -37075,6 +37123,7 @@ inadsuētus=inādsŭētus|doctus||
 ĭnădūlābĭlĭs|fortis|ĭnădūlābĭl|
 īnădultĕrātus=īnădūltĕrātus|doctus||
 ĭnădustus=ĭnădūstus|doctus||
+inadvertentia|uita||
 ĭnaedĭfĭcātĭo=ĭnāedĭfĭcātĭo|miles|ĭnāedĭfĭcātĭōn|
 ĭnaedificātus=ĭnāedificātus|doctus||
 ĭnaedĭfĭco=ĭnāedĭfĭco|amo||
@@ -37783,6 +37832,7 @@ incussĭo=īncūssĭo|miles|īncūssĭōn|
 incussŏr=īncūssŏr|miles|īncūssōr|
 incussus=īncūssus|doctus||
 incussŭs2=īncūssŭs|manus||
+incustodia|uita||
 incustōdītus=īncūstōdītus|doctus||
 incūsus=īncūsus|doctus||
 incŭtĭo=īncŭtĭo|capio|īncūss|īncūss
@@ -37825,6 +37875,7 @@ indĕcōrōsus=īndĕcōrōsus|doctus||
 indĕcōrus=īndĕcōrus|doctus||
 indēfătīgābĭlis=īndēfătīgābĭlĭs|fortis|īndēfătīgābĭl|
 indēfătīgātus=īndēfătīgātus|doctus||
+indefectīvus|doctus||
 indēfectus=īndēfēctus|doctus||
 indēfensē=īndēfēnsē|adve||
 indēfensus=īndēfēnsus|doctus||
@@ -38096,6 +38147,7 @@ indultŭs2=īndūltŭs|manus||
 indūmentum=īndūmēntŭm|templum||
 indŭo=īndŭo|lego|īndŭ|īndūt
 indŭpĕrans=īndŭpĕrāns|infans|īndŭpĕrānt|
+indurabilis|fortis|indurabil|
 indūrātĭo=īndūrātĭo|miles|īndūrātĭōn|
 indūrātus=īndūrātus|doctus||
 indūresco=īndūrēsco|lego|īndūrŭ|
@@ -38715,6 +38767,7 @@ ingyaeŏnes=īngўāeŏnes|opes|īngўāeŏn|
 ĭnhaerĕo=ĭnhāerĕo|moneo|ĭnhāes|ĭnhāes
 ĭnhaeresco=ĭnhāerēsco|lego|ĭnhāes|ĭnhāes
 ĭnhaesĭo=ĭnhāesĭo|miles|ĭnhāesĭōn|
+inhaesitānter|advr||
 ĭnhālātĭo|miles|ĭnhālātĭōn|
 ĭnhālātus|doctus||
 ĭnhālātŭs2|manus||
@@ -40162,6 +40215,7 @@ intransĭbĭlis=īntrānsĭbĭlĭs|fortis|īntrānsĭbĭl|
 intransĭtīvē=īntrānsĭtīvē|adve||
 intransĭtīvus=īntrānsĭtīvus|doctus||
 intransmĕābĭlĭs=īntrānsmĕābĭlĭs|fortis|īntrānsmĕābĭl|
+intransnatabile|fortis|intransnatabil|
 intrantes=īntrāntes|manes|īntrānt|
 intrātus=īntrātus|doctus||
 intrectātus=īntrēctātus|doctus||
@@ -40494,6 +40548,7 @@ ioppīta|uita||
 iordānēs2=ĭōrdānēs|ciuis|ĭōrdān|
 ĭŏs|delos||
 ĭōsēph2|inv||
+iosephīna|uita||
 iōsēphus2=ĭōsēphus|lupus||
 ĭōta|uita||
 ĭōta2|uita||
@@ -40613,6 +40668,7 @@ irrĕlĭgātus=īrrĕlĭgātus|doctus||
 irrĕlĭgĭo=īrrĕlĭgĭo|miles|īrrĕlĭgĭōn|
 irrĕlĭgĭōsē=īrrĕlĭgĭōsē|adve||
 irrĕlĭgĭōsĭtās=īrrĕlĭgĭōsĭtās|miles|īrrĕlĭgĭōsĭtāt|
+irreligiōsus|doctus||
 irrĕmĕābĭlis=īrrĕmĕābĭlĭs|fortis|īrrĕmĕābĭl|
 irrĕmĕābĭlĭtĕr=īrrĕmĕābĭlĭtĕr|advr||
 irrĕmĕdĭābĭlis=īrrĕmĕdĭābĭlĭs|fortis|īrrĕmĕdĭābĭl|
@@ -40954,6 +41010,8 @@ iturĭum|templum||
 ityraea=ityrāea|roma||
 ĭtўlus|lupus||
 ĭtўs|aer|ĭtў|
+iubilōsus|doctus||
+iucundānter|advr||
 iūcunditūdo=ĭūcūnditūdo|miles|ĭūcūnditūdin|
 iugilo=ĭugilo|amo||
 iugo3=ĭugo|lego||
@@ -43713,6 +43771,8 @@ litubĭum|templum||
 lĭtūra|uita||
 lĭtūrārii=lĭtūrārĭi|liberi||
 lĭtūrārĭus|aureus||
+liturgia|uita||
+liturgicus|doctus||
 līturgus=lītūrgus|lupus||
 lĭtūro|amo||
 lītus=lītŭs,līttus|corpus|lītŏr,līttŏr|
@@ -43871,6 +43931,7 @@ longaevus2=lōngāevus|lupus||
 longănĭmis=lōngănĭmĭs|fortis|lōngănĭm|
 longănĭmĭtās=lōngănĭmĭtās|miles|lōngănĭmĭtāt|
 longănĭmĭtĕr=lōngănĭmĭtĕr|advr||
+longanimus|doctus||
 longăno=lōngăno|miles|lōngănōn|
 longănōn=lōngănōn|miles|lōngănōn|
 longānus=lōngānus|doctus||
@@ -44218,6 +44279,7 @@ lūdĭus|doctus||
 lūdĭvăgus|doctus||
 lūdo|lego|lūs|lūs
 lūdor=lūdŏr|miles|lūdōr|
+ludovīcus|lupus||
 lūdus|lupus||
 lŭēcŭla|uita||
 lŭēla|uita||
@@ -45026,6 +45088,7 @@ mājōrĭānus|lupus||
 mājōrĭārĭus|filius||
 mājōrĭca|roma||
 mājōrīnus|doctus||
+majoritas|miles|majoritāt|
 mājŭgĕna|roma||
 mājūma|uita||
 mājus3|doctus||
@@ -45515,6 +45578,7 @@ marcellīa=mārcēllīa|castra||
 marcellĭānus=mārcēllĭānus|doctus||
 marcellina=mārcēllina|roma||
 marcellinus=mārcēllinus|lupus||
+marcellīnus2|lupus||
 marcellus=mārcēllus|lupus||
 marcellus2=mārcēllus|lupus||
 marcens=mārcēns|infans|mārcēnt|
@@ -45864,6 +45928,7 @@ mātĕrĭor=mātĕrĭŏr|imitor||
 mātĕrĭōsus|doctus||
 mătĕrĭs|ciuis|mătĕr|
 māterna=mātērna|roma||
+maternitas|miles|maternitāt|
 māternus=mātērnus|doctus||
 māternus2=mātērnus|lupus||
 mātertĕra=mātērtĕra|uita||
@@ -47961,6 +48026,7 @@ mŏnētālĭs|fortis|mŏnētāl|
 mŏnētārĭus|aureus||
 mŏnētārĭus2|lupus||
 mŏnetĭum|templum||
+moniālis|fortis|moniāl|
 monĭca|uita||
 mŏnīle|mare|mŏnīl|
 mŏnĭmentārĭus=mŏnĭmēntārĭus|aureus||
@@ -50111,6 +50177,7 @@ nī̆grŏr|miles|nī̆grōr|
 nĭgrum|templum||
 nĭhĭl|nihil||
 nĭhildum=nĭhīldŭm|inv||
+nihileitas|miles|nihileitāt|
 nĭhĭlō|inv||
 nĭhĭlōmĭnŭs|inv||
 nĭhĭlum|templum||
@@ -50456,6 +50523,7 @@ norbānenses=nōrbānēnses|manes|nōrbānēns|
 norbāni=nōrbāni|liberi||
 norbānus=nōrbānus|lupus||
 norbānus2=nōrbānus|doctus||
+norbērtus|lupus||
 nōrēĭa|roma||
 nōrenses=nōrēnses|manes|nōrēns|
 nōrensis=nōrēnsĭs|fortis|nōrēns|
@@ -52313,6 +52381,7 @@ omānus|doctus||
 ombŏs=ōmbŏs|delos||
 ombrĭa=ōmbrĭa|uita||
 ombrĭŏs=ōmbrĭŏs|delos||
+omega|inv||
 ōmĕn|corpus|ōmĭn|
 ōmentātus=ōmēntātus|doctus||
 ōmentum=ōmēntum|templum||
@@ -54642,6 +54711,7 @@ passĭēnus=pāssĭēnus|lupus||
 passim=pāssĭm|inv||
 passĭo=pāssĭo|miles|pāssĭōn|
 passĭōnālis=pāssĭōnālĭs|fortis|pāssĭōnāl|
+passiōno|amo||
 passĭto=pāssĭto|amo||
 passīvē=pāssīvē|adve||
 passīvĭtās=pāssīvĭtās|miles|pāssīvĭtāt|
@@ -54971,6 +55041,7 @@ pax3=pāx|miles|pāc|
 paxaea=pāxāea|roma||
 paxillus=pāxīllus|lupus||
 peccāmĕn=pēccāmĕn|corpus|pēccāmĭn|
+peccaminōsus|doctus||
 peccans=pēccāns|infans|pēccānt|
 peccans2=pēccāns|ciuis|pēccānt|
 peccantĕr=pēccāntĕr|advr||
@@ -58518,6 +58589,7 @@ plēmĭnĭus|filius||
 plemmўrĭum=plēmmўrĭum|templum||
 plēmўrĭum|templum||
 plēnārĭus|aureus||
+plenarie|adve||
 plēnē|adve||
 plēnĭlūnĭum|templum||
 plēnĭpŏtēns|infans|plēnĭpŏtēnt|
@@ -59697,6 +59769,7 @@ praecommŏdo=prāecōmmŏdo|amo||
 praecommŏvĕo=prāecōmmŏvĕo|moneo||
 praecompŏsĭtus=prāecōmpŏsĭtus|doctus||
 praeconcinnātus=prāecōncīnnātus|doctus||
+praeconcipio|capio|praeconcēp|praeconcēpt
 praecondĭo=prāecōndĭo|audio||
 praecondĭtus=prāecōndĭtus|doctus||
 praeconfessĭo=prāecōnfēssĭo|miles|prāecōnfēssĭōn|
@@ -59867,6 +59940,7 @@ praefīdens=prāefīdēns|infans|prāefīdēnt|
 praefīdentĕr=prāefīdēntĕr|advr||
 praefīgo=prāefīgo|lego|prāefīx|prāefīx
 praefĭgūrātĭo=prāefĭgūrātĭo|miles|prāefĭgūrātĭōn|
+praefiguratīvus|doctus||
 praefĭgūrātŏr=prāefĭgūrātŏr|miles|prāefĭgūrātōr|
 praefĭgūro=prāefĭgūro|amo||
 praefīnĭo=prāefīnĭo|audio|prāefīnīv,prāefīnĭ,prāefīn|prāefīnīt
@@ -59946,6 +60020,7 @@ praeguberno=prāegubērno|amo||
 praegustātīvus=prāegūstātīvus|doctus||
 praegustātor=prāegūstātŏr|miles|prāegūstātōr|
 praegusto=prāegūsto|amo||
+praegūstus|manus||
 praegypso=prāegȳpso|amo||
 praehĭbĕo=prāehĭbĕo|moneo|prāehĭbŭ|prāehĭbĭt
 praehŏnōrābĭlis=prāehŏnōrābĭlĭs|fortis|prāehŏnōrābĭl|
@@ -60759,6 +60834,7 @@ prensōrĭum=prēnsōrĭum|templum||
 prensus=prēnsus|doctus||
 prĕpĕsinthŏs=prĕpĕsīnthŏs|delos||
 presbўtĕr=prēsbўtĕr,prēsbĭtĕr|puer||
+presbyterālis|fortis|presbyterāl|
 presbўtĕrātŭs=prēsbўtĕrātŭs|manus||
 presbўtĕrĭum=prēsbўtĕrĭum|templum||
 pressē=prēssē|adve||
@@ -61185,6 +61261,7 @@ prōductĭo=prōdūctĭo|miles|prōdūctĭōn|
 prōductīvus=prōdūctīvus|doctus||
 prōducto=prōdūcto|amo||
 prōductŏr=prōdūctŏr|miles|prōdūctōr|
+productrix|miles|productrīc|
 prōductus=prōdūctus|doctus||
 prōdŭŏvir=prōdŭŏvĭr|puer||
 prōdux=prōdūx|miles|prōdŭc|
@@ -62410,6 +62487,7 @@ pulchrālĭa=pūlchrālĭa|moenia|pūlchrāl|
 pulchrē=pūlchrē|adve||
 pulchresco=pūlchrēsco|lego||
 pulchrĭtās=pūlchrĭtās|miles|pūlchrĭtāt|
+pulchriter|advr||
 pulchrĭtūdō=pūlchrĭtūdō|miles|pūlchrĭtūdĭn|
 pulchrum=pūlchrum|templum||
 pulcra=pūlcra|roma||
@@ -63625,6 +63703,7 @@ ragŭel|ciuis|raguēl|
 ragūsa|roma||
 rahŭel|inv||
 raia=răĭa|uita||
+raimūndus|lupus||
 rālla|roma||
 rallum=rāllum|templum||
 rallus=rāllus|doctus||
@@ -63996,11 +64075,13 @@ rĕcognĭtĭo=rĕcōgnĭtĭō̆|miles|rĕcōgnĭtĭōn|
 rĕcognĭtus=rĕcōgnĭtus|doctus||
 rĕcognosco=rĕcōgnōsco|lego|rĕcōgnōv|rĕcōgnĭt
 rĕcōgo|lego||
+recollectio|miles|recollectiōn|
 rĕcollectus=rĕcōllēctus|doctus||
 rĕcollĭgo=rĕcōllĭgo|lego|rĕcōllēg|rĕcōllēct
 rĕcollŏco=rĕcōllŏco|amo||
 rĕcōlo|lego|rĕcōlŭ|rĕcūlt
 rĕcōlo2|amo||
+recommēndo|amo||
 rĕcommentor=rĕcōmmēntŏr|imitor||
 rĕcommĭniscor=rĕcōmmĭnīscŏr|sequor||
 rĕcommŏnĕo=rĕcōmmŏnĕo|moneo||
@@ -64429,6 +64510,7 @@ rēgŭlus2|lupus||
 rēgulvium=rēgūlvĭum|templum||
 rĕgusto=rĕgūsto|amo||
 rĕgȳro|amo||
+rehabeo|moneo|rehabu|rehabit
 rĕhālo|amo||
 rĕhisco=rĕhīsco|lego||
 rēiactātio=rēĭāctātĭo|miles|rēĭāctātĭōn|
@@ -64960,6 +65042,7 @@ rĕsĭdŭae=rĕsĭdŭāe|epulae||
 rĕsĭdŭum|templum||
 rĕsĭdŭus|aureus||
 rĕsignācŭlum=rĕsīgnācŭlum|templum||
+resignatio|miles|resignatiōn|
 resīgnātor=resīgnātŏr|miles|resīgnātōr|
 rĕsignātrix=rĕsīgnātrīx|miles|rĕsīgnātrīc|
 rĕsignātus=rĕsīgnātus|doctus||
@@ -65655,6 +65738,7 @@ rixo=rīxo|amo||
 rixor=rīxŏr|imitor||
 rixōsus=rīxōsus|doctus||
 rīxŭla|uita||
+robērtus|lupus||
 rŏbĕus|aureus||
 rŏbĭdus|doctus||
 rōbīgālĭa|moenia|rōbīgāl|
@@ -65725,6 +65809,7 @@ rōmĕthĭum|templum||
 rōmĭlĭus2|lupus||
 romphaea=rōmphāea|uita||
 romphaeālis=rōmphāeālĭs|fortis|rōmphāeāl|
+romuāldus|lupus||
 rōmŭla|roma||
 rōmŭlāris=rōmŭlārĭs|fortis|rōmŭlār|
 rōmŭlĕa|roma||
@@ -66280,6 +66365,7 @@ săcŏpēnĭum|templum||
 sacŏs|delos||
 sā̆crābĭlĭtĕr|advr||
 sā̆crāmentālis=sā̆crāmēntālĭs|fortis|sā̆crāmēntāl|
+sacramentaliter|advr||
 săcrāmentārĭum=săcrāmēntārĭum|templum||
 sacrāmentum=sā̆crāmēntŭm|templum||
 sā̆crāni|liberi||
@@ -67010,6 +67096,7 @@ sărăpĭs|ciuis|sărăp|
 sărāpis2|ciuis|sărāp,sărāpĭd|
 sarapta=sarāpta|roma||
 sārăvus|lupus||
+sarbelius|lupus||
 sarca=sārca|uita||
 sarcasmos=sārcāsmos|delos||
 sarcīmĕn=sārcīmĕn|corpus|sārcīmĭn|
@@ -67218,6 +67305,7 @@ sătisdo=sătīsdo|amo|sătīsdĕd|sătīsdăt
 sătisfăcĭo=sătīsfăcĭo|facio|sătīsfēc|sătīsfāct
 sătisfactĭo=sătīsfāctĭo|miles|sătīsfāctĭōn|
 sătisfactĭōnālis=sătīsfāctĭōnālĭs|fortis|sătīsfāctĭōnāl|
+satisfactorius|doctus||
 sătĭŭs|inv||
 sătīva|castra||
 sătīvus|doctus||
@@ -68784,6 +68872,7 @@ sēnsĭlŏcus|doctus||
 sensĭlŏquus=sēnsĭlŏquus|doctus||
 sensim=sēnsĭm|inv||
 sēnsĭo|miles|sēnsĭōn|
+sensitīvus|doctus||
 sensōrĭum=sēnsōrĭum|templum||
 sensŭālis=sēnsŭālĭs|fortis|sēnsŭāl|
 sensŭālĭtās=sēnsŭālĭtās|miles|sēnsŭālĭtāt|
@@ -69877,6 +69966,7 @@ simplĭcĭter=sīmplĭcĭtĕr|advr||
 simplĭcĭtūdo=sīmplĭcĭtūdo|miles|sīmplĭcĭtūdĭn|
 simplicitus=sīmplicitus|adv||
 simplĭco=sīmplĭco|amo||
+simplifico|amo||
 simplo=sīmplo|amo||
 simplum=sīmplum|templum||
 simplus=sīmplus|doctus||
@@ -70185,6 +70275,7 @@ sĭtus2|manus||
 sīvĕ|inv||
 sixtus=sīxtus|lupus||
 sizĭo=sīzĭo|audio||
+slavonĭus|doctus||
 slemnĭum=slēmnĭum|templum||
 smăragdăchātēs=smărāgdăchātēs|cometes||
 smăragdĭnĕus=smărāgdĭnĕus|aureus||
@@ -70294,6 +70385,7 @@ sohaemus=sŏhāemus|lupus||
 sōl|miles|sōl|
 sōl2|miles|sōl|
 sōlācĭŏlum=sōlācĭŏlŭm|templum||
+solaciōsus|doctus||
 sōlācĭum=sōlācĭŭm|templum||
 sōlācĭus|aureus||
 sōlāgo|miles|sōlāgĭn|
@@ -72276,6 +72368,7 @@ sublecto=sū̆blēcto|amo||
 sublectus=sū̆blēctus|doctus||
 sublĕgo=sūblĕgo|lego|sūblēg|sūblēct
 sublestus=sū̆blēstus|doctus||
+sublevāmen|corpus|sublevāmin|
 sublĕvātĭo=sū̆blĕvātĭo|miles|sū̆blĕvātĭōn|
 sublĕvātus=sū̆blĕvātus|doctus||
 sublĕvo=sūblĕvo|amo||
@@ -72661,6 +72754,7 @@ subtīlĭlŏquentĭa=sūbtīlĭlŏquēntĭa|uita||
 subtīlĭlŏquus=sūbtīlĭlŏquus|doctus||
 subtīlĭo=sūbtīlĭo|amo||
 subtīlis=sūbtīlĭs|fortis|sūbtīl|
+subtilitas|miles|subtilitāt|
 subtīlĭtĕr=sūbtīlĭtĕr|advr||
 subtĭmĕo=sūbtĭmĕo|moneo||
 subtinnĭo=sūbtīnnĭo|audio||
@@ -73475,6 +73569,8 @@ sŭpernās2=sŭpērnās|miles|sŭpērnāt|
 sŭpernāscor=sŭpērnāscŏr|sequor||sŭpērnāt
 sŭpernātĭo=sŭpērnātĭo|miles|sŭpērnātĭōn|
 sŭpernăto=sŭpērnăto|amo||
+supernaturalis|fortis|supernaturāl|
+supernaturaliter|advr||
 sŭpernātus=sŭpērnātus|doctus||
 sŭpernāvĭgo=sŭpērnāvĭgo|amo||
 sŭpernē=sŭpērnē|inv||
@@ -75190,6 +75286,7 @@ tĕphrītis|miles|tĕphrītĭd|
 tĕpĭdārĭum|templum||
 tĕpĭdārĭus|aureus||
 tĕpĭdē|adve||
+tepiditas|miles|tepiditāt|
 tĕpĭdo|amo||
 tĕpĭdus|doctus||
 tĕpor=tĕpŏr|miles|tĕpōr|
@@ -78324,6 +78421,7 @@ turgŏr=tūrgŏr|miles|tūrgōr|
 tūrĭa|roma||
 tŭrĭānus|doctus||
 tūrĭasso=tūrĭāsso|miles|tūrĭāssōn|
+turibĭus|lupus||
 tūrĭbŭlum|templum||
 turicensis=turicēnsĭs|fortis|turicēns|
 tūrĭcrĕmus|doctus||
@@ -79915,6 +80013,7 @@ vēnātrix=vēnātrīx|miles|vēnātrīc|
 vēnātūra|uita||
 vēnātus|manus||
 vēnātus2|doctus||
+venceslāus|lupus||
 vendax=vēndāx|fortis|vēndāc|
 vendĭbĭlis=vēndĭbĭlĭs|fortis|vēndĭbĭl|
 vendĭbĭlĭtĕr=vēndĭbĭlĭtĕr|advr||
@@ -81292,6 +81391,7 @@ vĭtŭpĕrābĭtĕr|advr||
 vĭtŭpĕrātĭo|miles|vĭtŭpĕrātĭōn|
 vĭtŭpĕrātīvus|doctus||
 vĭtŭpĕrātŏr|miles|vĭtŭpĕrātōr|
+vituperium|templum||
 vĭtŭpĕro|amo||
 vĭtŭpĕro2|miles|vĭtŭpĕrōn|
 vitŭs|manus||
