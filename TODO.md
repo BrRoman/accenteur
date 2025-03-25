@@ -1,11 +1,23 @@
-Accentuation des mots en eu- pas claire : Eútychus, mais éucharis.
-Mieux commenter le code.
-Data.js à répartir en sous-dossiers (a, b, c…).
+## Issues:
+#8 Hiccine Haeccine etc. not recognized
+#11 Missing words of the Missale Romanum 2002
+#12 Inappropriate treatment of “Ave”
+#13 Greek words
+#14 Shortened form: "vi" omitted in 2nd person perfect indicative.
+#15 Shortened form: "ve" omitted in 3rd person plural perfect indicative.
+#16 Shortened form: "v" omitted in 3rd person plural perfect indicative.
+#17 Shortened form: "ve" omitted in perfect etc. with "av", "ev", "ov".
+#18 Shortened form: "v" omitted in perfect etc. with "iv".
+#19 Shortened form: "vi" omitted in perfect etc. with "av", "ev", "iv".
+#20 Marana (added to the list below).
+#21 Vocative forms of proper names in "-ius"
+#22 Odium not accented.
+#23 Words in "eu-" not consistant.
+#24 Improve code comments.
+#25 Divide data.js into subfolders ("a", "b", "c" etc.)
 
-FIXME haeccine/hiccine [! Pull request of Benjamin Bloomfield]
-FIXME odium
 
-Mots à ajouter :
+## Words to add:
 adiacet (adjacet OK)
 ædificarunt
 appetamus
@@ -26,6 +38,7 @@ humillimus
 ischyros (ó)
 kyrie (ý)
 licentiatis
+marana (marána) (Issue #20)
 meipsum
 migrarunt
 mihique
@@ -48,3 +61,4 @@ teipsum
 theos (ó)
 transiet
 vobismetipsis
+
