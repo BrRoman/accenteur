@@ -684,10 +684,12 @@ modele:amo
 R:0:1,0
 R:1:1,āv
 R:2:1,āt
+R:3:1,ā
 des:121-126:0:ō̆;ās;ăt;āmŭs;ātĭs;ānt
 des:127-132:0:ābăm;ābās;ābăt;ābāmŭs;ābātĭs;ābānt
 des:133-138:0:ābō̆;ābĭs;ābĭt;ābĭmŭs;ābĭtĭs;ābūnt
 des:139-144:1:ī;īstī;ĭt;ĭmŭs;īstĭs;ērūnt,ērĕ
+des+:140,143,144:3:stī;stĭs;rūnt
 des:145-150:1:ĕrăm;ĕrās;ĕrăt;ĕrāmŭs;ĕrātĭs;ĕrānt
 des:151-156:1:ĕrō̆;ĕrī̆s;ĕrĭt;ĕrī̆mŭs;ĕrī̆tĭs;ĕrīnt
 ! subjonctif
@@ -760,6 +762,7 @@ modele:moneo
 pere:amo
 R:0:2,0
 R:2:-
+R:3:2,ē
 des:121-126:0:ĕō̆;ēs;ĕt;ēmŭs;ētĭs;ēnt
 des:127-132:0:ēbăm;ēbās;ēbăt;ēbāmŭs;ēbātĭs;ēbānt
 des:133-138:0:ēbō̆;ēbĭs;ēbĭt;ēbĭmŭs;ēbĭtĭs;ēbūnt
@@ -918,6 +921,7 @@ abs:267-338
 
 modele:audio
 pere:capio
+R:3:2,ī
 ! indicatif pr.
 des:122,124,125:3:īs;īmŭs;ītĭs
 ! subjonctif

@@ -379,16 +379,6 @@ function search_quantified(word) {
         }
     }
 
-    // A word in "-sti" ("-stis") can be a syncopated form ("amasti" for "amavisti"):
-    if (word.length > 3 && word.indexOf("sti") == word.length - 3) {
-        /(\S*)([aeiou])sti/.exec(word);
-        found.push(RegExp.$1 + longs[vowels.indexOf(RegExp.$2)] + "stī");
-    }
-    if (word.length > 4 && word.indexOf("stis") == word.length - 4) {
-        /(\S*)([aeiou])stis/.exec(word);
-        found.push(RegExp.$1 + longs[vowels.indexOf(RegExp.$2)] + "stĭs");
-    }
-
     // A word in "-isse*" can be a syncopated form ("audissent" for "audiissent"):
     if (word.length > 5 && word.indexOf("isse") > word.length - 7) {
         /(\S*)isse(.{0,2})/.exec(word);
