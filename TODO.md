@@ -35,7 +35,6 @@ cosmae (ae ligature missing)
 cuiusvis
 eorundem
 exseritur
-hagios (á)
 himas (á)
 humillimus
 ischyros (ó)
