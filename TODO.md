@@ -23,11 +23,9 @@
 #24 Improve code comments.
 #25 Divide data.js into subfolders ("a", "b", "c" etc.)
 #26 Concedatque (uppercase).
-#27 Adorator (all forms wrong-accented).
 
 
 ## Words to add:
-adoratores
 adiacet (adjacet OK)
 appetamus
 basso, are ? bassari ?
