@@ -1,5 +1,4 @@
 ## Issues:
-#8 Hiccine Haeccine etc. not recognized
 #11 Missing words of the Missale Romanum 2002
 #12 Inappropriate treatment of “Ave”
 #13 Greek words

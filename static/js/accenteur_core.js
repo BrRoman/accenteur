@@ -320,6 +320,16 @@ function accentify(word) {
     if (/..*emetips..*/.test(word)) {
         found.push(word.replace("emetips", "emetīps"));
     }
+    // Words in "-cine" (hæccine etc.):
+    if (word.endsWith("cine")) {
+        plain_word = word.substring(0, word.length - 4);
+        if (plain_word.toLowerCase().startsWith("hae") || plain_word.toLowerCase().startsWith("hæ")) {
+            found.push(word.replace("ae", "āe").replace("æ", "āe"));
+        }
+        else {
+            found.push(last_long(plain_word) + "cine");
+        }
+    }
     // Words in "-familias":
     if (/..*familias/.test(word)) {
         found.push(word.replace("familias", "familĭas"));
