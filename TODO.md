@@ -33,7 +33,6 @@ hagios (á)
 himas (á)
 humillimus
 ischyros (ó)
-kyrie (ý)
 licentiatis
 meipsum
 migrarunt
