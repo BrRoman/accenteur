@@ -8,7 +8,6 @@
 #17 Shortened form: "ve" omitted in perfect etc. with "av", "ev", "ov".
 #18 Shortened form: "v" omitted in perfect etc. with "iv".
 #19 Shortened form: "vi" omitted in perfect etc. with "av", "ev", "iv".
-#20 Marana (added to the list below).
 #21 Vocative forms of proper names in "-ius"
 #22 Odium not accented.
 #23 Words in "eu-" not consistant.
@@ -37,7 +36,6 @@ humillimus
 ischyros (ó)
 kyrie (ý)
 licentiatis
-marana (marána) (Issue #20)
 meipsum
 migrarunt
 mihique
