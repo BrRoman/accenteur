@@ -7,14 +7,6 @@
 #15 Shortened form: "ve" omitted in 3rd person plural perfect indicative.
     cognoverunt → cognorunt
 #17 Shortened form: all persons of future perfect, pluperfect indicative, and perfect subjunctive for perfect stems in ōv (?): ve is omitted.
-#18 Shortened form: all persons of future perfect, pluperfect indicative, and perfect subjunctive for perfect stems in īv: v is omitted.
-    audivero → audiero
-    audiveram → audieram
-    audiverim → audierim
-#19 Shortened form: all persons of pluperfect subjunctive and perfect infinitive for perfect stems ending in āv, ēv, īv, and ōv: vi is omitted.
-    laudavissem → laudassem
-    laudavisse → laudasse
-    audivisse → audisse
 #22 Odium not accented.
 #23 Words in "eu-" not consistant.
 #24 Improve code comments.
