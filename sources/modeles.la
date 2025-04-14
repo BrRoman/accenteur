@@ -751,7 +751,7 @@ des:163-168:0:ărĕm;ărēs;ărĕt;ărēmŭs;ărētĭs;ărēnt
 des:182-185:0:ătĕ;ătō;ătō;ătōtĕ
 ! infinitif
 des:187:0:ărĕ
-des:188:0:īssĕ
+des:188:1:īssĕ
 ! indicatif passif
 des:268-271:0:ărĭs;ătŭr;ămŭr;ămĭnī
 des:273-278:0:ăbăr;ăbārĭs,ăbārĕ;ăbātŭr;ăbāmŭr;ăbāmĭnī;ăbāntŭr
@@ -935,6 +935,7 @@ des:163-168:3:īrĕm;īrēs;īrĕt;īrēmŭs;īrētĭs;īrēnt
 des:181-186:3:ī;ītĕ;ītō;ītō;ītōtĕ;ūntō
 ! infinitif
 des:187:3:īrĕ
+des:188:3:sse
 ! indicatif passif
 des:268-271:3:īrĭs,īrĕ;ītŭr;īmŭr;īmĭnī
 ! subjonctif
