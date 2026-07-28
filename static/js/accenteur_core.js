@@ -1,634 +1,600 @@
 // This module returns the accented version(s) of a word.
 
-var vowels = ["a", "e", "i", "o", "u", "y", "A", "E", "I", "O", "U", "Y"];
-var consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "x", "z"];
-var longs = ["ā", "ē", "ī", "ō", "ū", "ȳ", "Ā", "Ē", "Ī", "Ō", "Ū", "Ȳ"];
-var breves = ["ă", "ĕ", "ĭ", "ŏ", "ŭ", "ў", "Ă", "Ĕ", "Ĭ", "Ŏ", "Ŭ", "Ў"];
-var accented = ["á", "é", "í", "ó", "ú", "ý"];
-var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "X", "Y", "Z"];
-var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "x", "y", "z"];
+const vowels = ["a", "e", "i", "o", "u", "y", "A", "E", "I", "O", "U", "Y"];
+const consonants = [
+  "b",
+  "c",
+  "d",
+  "f",
+  "g",
+  "h",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "v",
+  "x",
+  "z",
+];
+const longs = ["ā", "ē", "ī", "ō", "ū", "ȳ", "Ā", "Ē", "Ī", "Ō", "Ū", "Ȳ"];
+const breves = ["ă", "ĕ", "ĭ", "ŏ", "ŭ", "ў", "Ă", "Ĕ", "Ĭ", "Ŏ", "Ŭ", "Ў"];
+const accented = ["á", "é", "í", "ó", "ú", "ý"];
+const uppercase = [
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
+  "M",
+  "N",
+  "O",
+  "P",
+  "Q",
+  "R",
+  "S",
+  "T",
+  "U",
+  "V",
+  "X",
+  "Y",
+  "Z",
+];
+const lowercase = [
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "x",
+  "y",
+  "z",
+];
+
+const PREFIX_CASES = [
+  {
+    prefix: "acc",
+    replaceWith: "adc",
+    finalRegex: /^([aāă])dc/g,
+    finalReplacement: "$1cc",
+  },
+  {
+    prefix: "aff",
+    replaceWith: "adf",
+    finalRegex: /^([aāă])df/g,
+    finalReplacement: "$1ff",
+  },
+  {
+    prefix: "agg",
+    replaceWith: "adg",
+    finalRegex: /^([aāă])dg/g,
+    finalReplacement: "$1gg",
+  },
+  {
+    prefix: "all",
+    replaceWith: "adl",
+    finalRegex: /^([aāă])dl/g,
+    finalReplacement: "$1ll",
+  },
+  {
+    prefix: "arr",
+    replaceWith: "adr",
+    finalRegex: /^([aāă])dr/g,
+    finalReplacement: "$1rr",
+  },
+  {
+    prefix: "ass",
+    replaceWith: "ads",
+    finalRegex: /^([aāă])ds/g,
+    finalReplacement: "$1ss",
+  },
+  {
+    prefix: "att",
+    replaceWith: "adt",
+    finalRegex: /^([aāă])dt/g,
+    finalReplacement: "$1tt",
+  },
+  {
+    prefix: "ex",
+    replaceWith: "exs",
+    finalRegex: /^([eēĕ])xs/g,
+    finalReplacement: "$1x",
+  },
+  {
+    prefix: "coll",
+    replaceWith: "conl",
+    finalRegex: /^conl/g,
+    finalReplacement: "coll",
+  },
+  {
+    prefix: "con",
+    replaceWith: "com",
+    finalRegex: /^con/g,
+    finalReplacement: "com",
+  },
+  {
+    prefix: "obc",
+    replaceWith: "occ",
+    finalRegex: /^occ/g,
+    finalReplacement: "obc",
+  },
+];
 
 function accentify(word) {
-    // Return the case of the word:
-    var uppercase = is_uppercase(word);
+  const isCapitalized = is_uppercase(word);
+  const lowerWord = word.toLowerCase();
+  const normalizedWord = isCapitalized ? lowerWord : word;
+  let normalizedAll = normalizedWord;
+  let found = [...search_quantified(word)];
+  let matchedPrefixCase = null;
+  let enclitic = "";
 
-    // Return the possible accented versions of the word:
-    var found = search_quantified(word);
+  if (isCapitalized) {
+    found.push(
+      ...search_quantified(normalizedWord).map((s) =>
+        s ? to_uppercase(s) : s,
+      ),
+    );
+  }
 
-    // Try other possibilities, first separately and then together:
-    var new_word = word;
-    var new_word_all = word;
-    var prefix = "";
-    var enclitic = "";
-    var with_j = false;
-    var has_æœ = false;
-    var sub_found = [];
-    // Uppercase? Set to lowercase:
-    if (uppercase) {
-        new_word = to_lowercase(word);
-        new_word_all = to_lowercase(new_word_all);
-        sub_found = search_quantified(new_word);
-        for (var i = 0; i < sub_found.length; i++) {
-            s = sub_found[i];
-            if (s != "") {
-                s = to_uppercase(s);
-            }
-            found.push(s);
-        }
+  for (const {
+    prefix,
+    replaceWith,
+    finalRegex,
+    finalReplacement,
+  } of PREFIX_CASES) {
+    if (lowerWord.startsWith(prefix)) {
+      const transformed = normalizedWord.replace(
+        new RegExp(`^${prefix}`),
+        replaceWith,
+      );
+      const subFound = search_quantified(transformed);
+      matchedPrefixCase = { finalRegex, finalReplacement };
+      normalizedAll = normalizedAll.replace(
+        new RegExp(`^${prefix}`),
+        replaceWith,
+      );
+      found.push(
+        ...subFound.map((s) =>
+          s ? s.replace(finalRegex, finalReplacement) : s,
+        ),
+      );
+      break;
     }
-    // Prefix? Replace it:
-    if (word.indexOf("acc") == 0 || new_word_all.indexOf("acc") == 0) {
-        prefix = "acc";
-        new_word = word.replace(/^acc/g, "adc");
-        new_word_all = new_word_all.replace(/^acc/g, "adc");
-        sub_found = search_quantified(new_word);
-        for (var i = 0; i < sub_found.length; i++) {
-            s = sub_found[i];
-            if (s != "") {
-                s = s.replace(/^([aāă])dc/g, "$1cc");
-            }
-            found.push(s);
-        }
-    }
-    if (word.indexOf("aff") == 0 || new_word_all.indexOf("aff") == 0) {
-        prefix = "aff";
-        new_word = word.replace(/^aff/g, "adf");
-        new_word_all = new_word_all.replace(/^aff/g, "adf");
-        sub_found = search_quantified(new_word);
-        for (var i = 0; i < sub_found.length; i++) {
-            s = sub_found[i];
-            if (s != "") {
-                s = s.replace(/^([aāă])df/g, "$1ff");
-            }
-            found.push(s);
-        }
-    }
-    if (word.indexOf("agg") == 0 || new_word_all.indexOf("agg") == 0) {
-        prefix = "agg";
-        new_word = word.replace(/^agg/g, "adg");
-        new_word_all = new_word_all.replace(/^agg/g, "adg");
-        sub_found = search_quantified(new_word);
-        for (var i = 0; i < sub_found.length; i++) {
-            s = sub_found[i];
-            if (s != "") {
-                s = s.replace(/^([aāă])dg/g, "$1gg");
-            }
-            found.push(s);
-        }
-    }
-    if (word.indexOf("all") == 0 || new_word_all.indexOf("all") == 0) {
-        prefix = "all";
-        new_word = word.replace(/^all/g, "adl");
-        new_word_all = new_word_all.replace(/^all/g, "adl");
-        sub_found = search_quantified(new_word);
-        for (var i = 0; i < sub_found.length; i++) {
-            s = sub_found[i];
-            if (s != "") {
-                s = s.replace(/^([aāă])dl/g, "$1ll");
-            }
-            found.push(s);
-        }
-    }
-    if (word.indexOf("arr") == 0 || new_word_all.indexOf("arr") == 0) {
-        prefix = "arr";
-        new_word = word.replace(/^arr/g, "adr");
-        new_word_all = new_word_all.replace(/^arr/g, "adr");
-        sub_found = search_quantified(new_word);
-        for (var i = 0; i < sub_found.length; i++) {
-            s = sub_found[i];
-            if (s != "") {
-                s = s.replace(/^([aāă])dr/g, "$1rr");
-            }
-            found.push(s);
-        }
-    }
-    if (word.indexOf("ass") == 0 || new_word_all.indexOf("ass") == 0) {
-        prefix = "ass";
-        new_word = word.replace(/^ass/g, "ads");
-        new_word_all = new_word_all.replace(/^ass/g, "ads");
-        sub_found = search_quantified(new_word);
-        for (var i = 0; i < sub_found.length; i++) {
-            s = sub_found[i];
-            if (s != "") {
-                s = s.replace(/^([aāă])ds/g, "$1ss");
-            }
-            found.push(s);
-        }
-    }
-    if (word.indexOf("att") == 0 || new_word_all.indexOf("att") == 0) {
-        prefix = "att";
-        new_word = word.replace(/^att/g, "adt");
-        new_word_all = new_word_all.replace(/^att/g, "adt");
-        sub_found = search_quantified(new_word);
-        for (var i = 0; i < sub_found.length; i++) {
-            s = sub_found[i];
-            if (s != "") {
-                s = s.replace(/^([aāă])dt/g, "$1tt");
-            }
-            found.push(s);
-        }
-    }
-    if ((word.indexOf("ex") == 0 || new_word_all.indexOf("ex") == 0) && word.indexOf("s") != 2) {
-        prefix = "ex";
-        new_word = word.replace(/^ex/g, "exs");
-        new_word_all = new_word_all.replace(/^ex/g, "exs");
-        sub_found = search_quantified(new_word);
-        for (var i = 0; i < sub_found.length; i++) {
-            s = sub_found[i];
-            if (s != "") {
-                s = s.replace(/^([eēĕ])xs/g, "$1x");
-            }
-            found.push(s);
-        }
-    }
-    if (word.indexOf("coll") == 0 || new_word_all.indexOf("coll") == 0) {
-        prefix = "coll";
-        new_word = word.replace(/^coll/g, "conl");
-        new_word_all = new_word_all.replace(/^coll/g, "conl");
-        sub_found = search_quantified(new_word);
-        for (var i = 0; i < sub_found.length; i++) {
-            s = sub_found[i];
-            if (s != "") {
-                s = s.replace(/^conl/g, "coll");
-            }
-            found.push(s);
-        }
-    }
-    if (word.indexOf("con") == 0 || new_word_all.indexOf("con") == 0) {
-        prefix = "con";
-        new_word = word.replace(/^con/g, "com");
-        new_word_all = new_word_all.replace(/^con/g, "com");
-        sub_found = search_quantified(new_word);
-        for (var i = 0; i < sub_found.length; i++) {
-            s = sub_found[i];
-            if (s != "") {
-                s = s.replace(/^com/g, "con");
-            }
-            found.push(s);
-        }
-    }
-    if (word.indexOf("obc") == 0 || new_word_all.indexOf("obc") == 0) {
-        prefix = "obc";
-        new_word = word.replace(/^obc/g, "occ");
-        new_word_all = new_word_all.replace(/^obc/g, "occ");
-        sub_found = search_quantified(new_word);
-        for (var i = 0; i < sub_found.length; i++) {
-            s = sub_found[i];
-            if (s != "") {
-                s = s.replace(/^occ/g, "obc");
-            }
-            found.push(s);
-        }
-    }
-    // Enclitic? Delete it:
-    var encl = ["que", "ne", "ve", "dam", "quam", "libet"];
-    for (var i = 0; i < encl.length; i++) {
-        var e = encl[i];
-        if (word.length > e.length && word.indexOf(e, word.length - e.length - 1) == word.length - e.length) {
-            var enclitic = e;
-            new_word = word.substring(0, word.indexOf(e, word.length - e.length - 1));
-            new_word_all = new_word_all.substring(0, new_word_all.indexOf(e, word.length - e.length - 1));
-            sub_found = search_quantified(new_word);
-            for (var j = 0; j < sub_found.length; j++) {
-                s = sub_found[j];
-                if (s != "") {
-                    s = last_long(s) + enclitic;
-                }
-                found.push(s);
-            }
-        }
-    }
-    // J? If the word begins with a "i" + vowel, or contains a "i" between 2 vowels, or begins with prefix + "i", then replace it with "j":
-    var new_word = is_uppercase(word) ? to_lowercase(word) : word;
-    var regex = /^i([aeiouy])/g;
-    new_word = new_word.replace(regex, "j$1");
-    new_word_all = new_word_all.replace(regex, "j$1");
-    var regex = /([aeiouy])i([aeiouy])/g;
-    new_word = new_word.replace(regex, "$1j$2");
-    new_word_all = new_word_all.replace(regex, "$1j$2");
-    // abi*:
-    new_word = new_word.replace(/^abi/g, "abj");
-    new_word_all = new_word_all.replace(/^abi/g, "abj");
-    // adi*:
-    new_word = new_word.replace(/^adi/g, "adj");
-    new_word_all = new_word_all.replace(/^adi/g, "adj");
-    // coni*:
-    new_word = new_word.replace(/^coni/g, "conj");
-    new_word_all = new_word_all.replace(/^coni/g, "conj");
-    // disi*:
-    new_word = new_word.replace(/^disi/g, "disj");
-    new_word_all = new_word_all.replace(/^disi/g, "disj");
-    // ini*:
-    new_word = new_word.replace(/^ini/g, "inj");
-    new_word_all = new_word_all.replace(/^ini/g, "inj");
-    // ob*:
-    new_word = new_word.replace(/^obi/g, "obj");
-    new_word_all = new_word_all.replace(/^obi/g, "obj");
-    // peri*:
-    new_word = new_word.replace(/^peri/g, "perj");
-    new_word_all = new_word_all.replace(/^peri/g, "perj");
-    // subi*:
-    new_word = new_word.replace(/^subi/g, "subj");
-    new_word_all = new_word_all.replace(/^subi/g, "subj");
-    if (new_word != word && count_vowels(new_word) > 2) {
-        with_j = true;
-        sub_found = search_quantified(new_word);
-        for (var i = 0; i < sub_found.length; i++) {
-            s = sub_found[i];
-            if (s != "") {
-                s = s.replace("j", "i");
-            }
-            found.push(s);
-        }
-    }
-    // æ, œ:
-    new_word = word.replace(/æ/g, "ae").replace(/Æ/g, "ae").replace(/œ/g, "oe");
-    new_word_all = new_word_all.replace(/æ/g, "ae").replace(/Æ/g, "ae").replace(/œ/g, "oe");
-    if (new_word != word) {
-        has_æœ = true;
-        sub_found = search_quantified(new_word);
-        for (var i = 0; i < sub_found.length; i++) {
-            s = sub_found[i];
-            if (s.indexOf("āĕ") == -1) { // We want "ærem" but not "aerem".
-                found.push(s);
-            }
-        }
-    }
-    // Finally, retry with all the possibilities together:
-    sub_found = search_quantified(new_word_all);
-    for (var i = 0; i < sub_found.length; i++) {
-        s = sub_found[i];
-        if (s != "") {
-            if (uppercase) {
-                s = to_uppercase(s);
-            }
-            if (prefix != "") {
-                switch (prefix) {
-                    case "acc":
-                        s = s.replace(/^([aāă])dc/g, "$1cc");
-                        break;
-                    case "aff":
-                        s = s.replace(/^([aāă])df/g, "$1ff");
-                        break;
-                    case "agg":
-                        s = s.replace(/^([aāă])dg/g, "$1gg");
-                        break;
-                    case "all":
-                        s = s.replace(/^([aāă])dl/g, "$1ll");
-                        break;
-                    case "arr":
-                        s = s.replace(/^([aāă])dr/g, "$1rr");
-                        break;
-                    case "ass":
-                        s = s.replace(/^([aāă])ds/g, "$1ss");
-                        break;
-                    case "att":
-                        s = s.replace(/^([aāă])dt/g, "$1tt");
-                        break;
-                    case "ex":
-                        s = s.replace(/^([eēĕ])xs/g, "$1x");
-                        break;
-                    case "coll":
-                        s = s.replace(/^conl/g, "coll");
-                        break;
-                    case "con":
-                        s = s.replace(/^con/g, "com");
-                        break;
-                    case "obc":
-                        s = s.replace(/^occ/g, "obc");
-                        break;
-                }
-            }
-            if (enclitic != "") {
-                s = last_long(s) + enclitic;
-            }
-            if (with_j) {
-                s = s.replace("j", "i");
-            }
-            found.push(s);
+  }
 
-            if (has_æœ && s.indexOf("āĕ") != -1) { // We want "ærem" but not "aerem".
-                found.pop();
-            }
-        }
+  const enclitics = ["que", "ne", "ve", "dam", "quam", "libet"];
+  for (const candidate of enclitics) {
+    if (word.length > candidate.length && word.endsWith(candidate)) {
+      enclitic = candidate;
+      const baseAll = normalizedAll.slice(0, -candidate.length);
+      const subFound = search_quantified(baseAll);
+      found.push(...subFound.map((s) => (s ? last_long(s) + candidate : s)));
+      break;
     }
-    // Words in "-cumque":
-    if (/..*cumque/.test(word)) {
-        found.push(word.replace("cumque", "cūmque"));
-    }
-    // Words in "-emetips-":
-    if (/..*emetips..*/.test(word)) {
-        found.push(word.replace("emetips", "emetīps"));
-    }
-    // Words in "-cine" (hæccine etc.):
-    if (word.endsWith("cine")) {
-        plain_word = word.substring(0, word.length - 4);
-        if (plain_word.toLowerCase().startsWith("hae") || plain_word.toLowerCase().startsWith("hæ")) {
-            found.push(word.replace("ae", "āe").replace("æ", "āe"));
-        }
-        else {
-            found.push(last_long(plain_word) + "cine");
-        }
-    }
-    // Words in "-familias":
-    if (/..*familias/.test(word)) {
-        found.push(word.replace("familias", "familĭas"));
-    }
+  }
 
-    if (found.length == 0) {
-        if (word.search(/[!?:;]/) == -1 && count_vowels(word) > 2) {
-            found.push("<span class='red'>" + word + "</span>");
-        } else {
-            found.push(word);
+  let newWord = normalizedWord;
+  let newWordAll = normalizedAll;
+  newWord = newWord
+    .replace(/^i([aeiouy])/g, "j$1")
+    .replace(/([aeiouy])i([aeiouy])/g, "$1j$2")
+    .replace(/^abi/g, "abj")
+    .replace(/^adi/g, "adj")
+    .replace(/^coni/g, "conj")
+    .replace(/^disi/g, "disj")
+    .replace(/^ini/g, "inj")
+    .replace(/^obi/g, "obj")
+    .replace(/^peri/g, "perj")
+    .replace(/^subi/g, "subj");
+
+  newWordAll = newWordAll
+    .replace(/^i([aeiouy])/g, "j$1")
+    .replace(/([aeiouy])i([aeiouy])/g, "$1j$2")
+    .replace(/^abi/g, "abj")
+    .replace(/^adi/g, "adj")
+    .replace(/^coni/g, "conj")
+    .replace(/^disi/g, "disj")
+    .replace(/^ini/g, "inj")
+    .replace(/^obi/g, "obj")
+    .replace(/^peri/g, "perj")
+    .replace(/^subi/g, "subj");
+
+  let withJ = false;
+  if (newWord !== normalizedWord && count_vowels(newWord) > 2) {
+    withJ = true;
+    found.push(
+      ...search_quantified(newWord).map((s) => (s ? s.replace("j", "i") : s)),
+    );
+  }
+
+  const aeWord = word
+    .replace(/æ/g, "ae")
+    .replace(/Æ/g, "Ae")
+    .replace(/œ/g, "oe");
+  newWordAll = newWordAll
+    .replace(/æ/g, "ae")
+    .replace(/Æ/g, "Ae")
+    .replace(/œ/g, "oe");
+
+  let hasAeOe = false;
+  if (aeWord !== word) {
+    hasAeOe = true;
+    found.push(
+      ...search_quantified(aeWord).filter((s) => s.indexOf("āĕ") === -1),
+    );
+  }
+
+  const finalSearch = search_quantified(newWordAll);
+  found.push(
+    ...finalSearch
+      .map((s) => {
+        if (!s) return null;
+        let result = s;
+        if (isCapitalized) {
+          result = to_uppercase(result);
         }
+        if (matchedPrefixCase) {
+          result = result.replace(
+            matchedPrefixCase.finalRegex,
+            matchedPrefixCase.finalReplacement,
+          );
+        }
+        if (enclitic) {
+          result = last_long(result) + enclitic;
+        }
+        if (withJ) {
+          result = result.replace("j", "i");
+        }
+        if (hasAeOe && result.indexOf("āĕ") !== -1) {
+          return null;
+        }
+        return result;
+      })
+      .filter(Boolean),
+  );
+
+  if (word.includes("cumque")) {
+    found.push(word.replace("cumque", "cūmque"));
+  }
+
+  if (word.includes("emetips")) {
+    found.push(word.replace("emetips", "emetīps"));
+  }
+
+  if (word.endsWith("cine")) {
+    const plainWord = word.slice(0, -4);
+    if (
+      plainWord.toLowerCase().startsWith("hae") ||
+      plainWord.toLowerCase().startsWith("hæ")
+    ) {
+      found.push(word.replace(/ae/g, "āe").replace(/æ/g, "āe"));
     } else {
-        for (var i = 0; i < found.length; i++) {
-            found[i] = qty_to_accent(word, found[i])[1];
-        }
+      found.push(last_long(plainWord) + "cine");
     }
-    return (reduce(found));
+  }
+
+  if (word.includes("familias")) {
+    found.push(word.replace("familias", "familĭas"));
+  }
+
+  if (found.length === 0) {
+    if (word.search(/[!?:;]/) === -1 && count_vowels(word) > 2) {
+      found.push("<span class='red'>" + word + "</span>");
+    } else {
+      found.push(word);
+    }
+  } else {
+    found = found.map((candidate) => qty_to_accent(word, candidate)[1]);
+  }
+
+  return unique(found);
 }
 
-// Returns an array of all the combinations of roots and terminations that can give word:
 function search_quantified(word) {
-    // We successively split the word into 2 splinters, like this for a word of five letters:
-    // |12345, then 1|2345, then 12|345, then 123|45, then 1234|5, then 12345,
-    // and each time we search if we find these 2 splinters
-    // in our roots' and terminations' Objects:
-    var found = [];
-    for (var i = 0; i <= word.length; i++) {
-        var root = word.substring(0, i);
-        var term = word.substring(i, word.length);
-        if (roots[root] != null && terminations[term] != null) {
-            for (var j = 0; j < roots[root].length; j++) {
-                r = roots[root][j];
-                var quantified = r[0];
-                var model = r[1];
-                var num_root = r[2];
-                if (root == word && (model == "inv" || models[model]["roots"][num_root] == "K")) {
-                    found.push(quantified);
-                } else {
-                    for (var k = 0; k < terminations[term].length; k++) {
-                        t = terminations[term][k]
-                        if (t[1] == model && t[2] == num_root) {
-                            found.push(quantified + t[0]);
-                        }
-                    }
-                }
-            }
-        }
-    }
+  const found = [];
 
-    return (found);
+  for (let i = 0; i <= word.length; i++) {
+    const root = word.slice(0, i);
+    const term = word.slice(i);
+
+    if (roots[root] != null && terminations[term] != null) {
+      for (const r of roots[root]) {
+        const [quantified, model, numRoot] = r;
+        if (
+          root === word &&
+          (model === "inv" || models[model]["roots"][numRoot] === "K")
+        ) {
+          found.push(quantified);
+        } else {
+          for (const t of terminations[term]) {
+            if (t[1] === model && t[2] === numRoot) {
+              found.push(quantified + t[0]);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  return found;
 }
 
-// Converts a quantified word into an accented one:
 function qty_to_accent(plain, quantified) {
-    plain = plain.replace(/æ/g, "ae").replace(/Æ/g, "Ae").replace(/œ/g, "oe");
-    quantified = quantified.replace(/æ/g, "ae").replace(/Æ/g, "Ae").replace(/œ/g, "oe");
-    var with_accents = plain;
-    var plain_split = plain.split("");
-    var quantified_split = quantified.split("");
-    var accentable = false;
-    var quantities = new Array(quantified.length); // Will contains something like ["0", "+", "0", "0", "-", "-"].
-    var num_syllables = 0;
+  plain = plain.replace(/æ/g, "ae").replace(/Æ/g, "Ae").replace(/œ/g, "oe");
+  quantified = quantified
+    .replace(/æ/g, "ae")
+    .replace(/Æ/g, "Ae")
+    .replace(/œ/g, "oe");
 
-    // We note the quantities of all the vowels of the word, and we count the syllables:
-    for (var i = 0; i < quantified.length; i++) {
-        var b = quantified[i - 1];
-        var c = quantified[i];
-        var d = quantified[i + 1];
-        if (c != "̆") {
-            // 1. Vowels without quantities:
-            if (vowels.indexOf(c) != -1) {
-                // Vowel without quantity is considered as a breve, except:
-                // - "u" after "a" or "q":
-                if (c == "u" && ["A", "a", "Q", "q"].indexOf(dequantify(b)) != -1) {
-                    quantities[i] = "0";
-                }
-                // - "e" after "ā" (*plain* "e", because "sāeculum" is different of "āĕris"):
-                else if (c == "e" && dequantify(b) == "a") {
-                    quantities[i] = "0";
-                }
-                // - "u" between "g" and a vowel:
-                else if (c == "u" && b == "g" && vowels.indexOf(dequantify(d)) != -1) {
-                    quantities[i] = "0";
-                }
-                // - "i" before "u":
-                else if (c == "i" && dequantify(d) == "u") {
-                    quantities[i] = "0";
-                } else {
-                    quantities[i] = "-";
-                }
-            }
+  const plainChars = [...plain];
+  const quantifiedChars = [...quantified];
+  const quantities = new Array(quantifiedChars.length);
+  let numSyllables = 0;
 
-            // 2. Vowels with quantities:
-            else if (longs.indexOf(c) != -1) {
-                if (quantified_split[i + 1] == "\u0306") { // Long + combining breve = breve.
-                    quantities[i] = "-";
-                } else {
-                    quantities[i] = "+";
-                }
-            } else if (breves.indexOf(c) != -1) {
-                quantities[i] = "-";
-            } else if (c == "\u0306") { // Combining breve => there are two quantities, and we set the 1st to "breve".
-                quantities[i - 1] = "-";
-                quantities[i] = "c";
-            }
+  for (let i = 0; i < quantifiedChars.length; i++) {
+    const previous = quantifiedChars[i - 1];
+    const current = quantifiedChars[i];
+    const next = quantifiedChars[i + 1];
 
-            // 3. Others (consonantics):
-            else {
-                quantities[i] = "0";
-            }
-
-            // Is this letter a new syllable?
-            var new_syllable = true;
-            // No if it is a consonantic:
-            if (quantities[i] == "0") {
-                new_syllable = false;
-            }
-            // No if it is a combining breve:
-            if (quantities[i] == "c") {
-                new_syllable = false;
-            }
-            // No if it is the second letter (without quantity) of "au", "eu", "ae", "qu":
-            if (quantities[i] == "0" && ["e", "u"].indexOf(dequantify(c)) != -1 && ["a", "e", "A", "E", "q"].indexOf(dequantify(b)) != -1) {
-                new_syllable = false;
-            }
-            // No if it is the second letter (breve) of "oe" (cœpit, but not coégit):
-            if (quantities[i] == "-" && dequantify(c) == "e" && dequantify(b) == "o") {
-                new_syllable = false;
-            }
-            // No if it is a "u" between "g" and a vowel:
-            if (c == "u" && b == "g" && vowels.indexOf(dequantify(d)) != -1) {
-                new_syllable = false;
-            }
-            // No if it is a "i" in the beginning of a world and followed by ["a", "o", "u"] (Iacob, Ioseph, iusti):
-            if (["i", "I"].indexOf(dequantify(c)) != -1 && i == 0 && ["a", "o", "u"].indexOf(dequantify(d)) != -1) {
-                new_syllable = false;
-            }
-            // Conclusion:
-            if (new_syllable) {
-                num_syllables++;
-            }
+    if (current !== "\u0306") {
+      if (vowels.includes(current)) {
+        if (
+          current === "u" &&
+          ["A", "a", "Q", "q"].includes(dequantify(previous))
+        ) {
+          quantities[i] = "0";
+        } else if (current === "e" && dequantify(previous) === "a") {
+          quantities[i] = "0";
+        } else if (
+          current === "u" &&
+          previous === "g" &&
+          vowels.includes(dequantify(next))
+        ) {
+          quantities[i] = "0";
+        } else if (current === "i" && dequantify(next) === "u") {
+          quantities[i] = "0";
+        } else {
+          quantities[i] = "-";
         }
+      } else if (longs.includes(current)) {
+        quantities[i] = quantifiedChars[i + 1] === "\u0306" ? "-" : "+";
+      } else if (breves.includes(current)) {
+        quantities[i] = "-";
+      } else if (current === "\u0306") {
+        quantities[i - 1] = "-";
+        quantities[i] = "c";
+      } else {
+        quantities[i] = "0";
+      }
+
+      let newSyllable = quantities[i] !== "0" && quantities[i] !== "c";
+      if (
+        quantities[i] === "0" &&
+        ["e", "u"].includes(dequantify(current)) &&
+        ["a", "e", "A", "E", "q"].includes(dequantify(previous))
+      ) {
+        newSyllable = false;
+      }
+      if (
+        quantities[i] === "-" &&
+        dequantify(current) === "e" &&
+        dequantify(previous) === "o"
+      ) {
+        newSyllable = false;
+      }
+      if (
+        current === "u" &&
+        previous === "g" &&
+        vowels.includes(dequantify(next))
+      ) {
+        newSyllable = false;
+      }
+      if (
+        ["i", "I"].includes(dequantify(current)) &&
+        i === 0 &&
+        ["a", "o", "u"].includes(dequantify(next))
+      ) {
+        newSyllable = false;
+      }
+      if (newSyllable) {
+        numSyllables++;
+      }
+    }
+  }
+
+  const filteredQuantities = quantities.filter((item) => item !== "c");
+  const filteredQuantified = quantifiedChars.filter(
+    (item) => item !== "\u0306",
+  );
+
+  if (numSyllables > 2) {
+    let nbVowels = 0;
+    let accentPos = 0;
+
+    for (let j = 0; j < filteredQuantities.length; j++) {
+      const qty = filteredQuantities[filteredQuantities.length - j - 1];
+      if (qty !== "0") {
+        nbVowels++;
+        if (
+          (nbVowels === 2 && qty === "+") ||
+          (nbVowels === 3 && accentPos === 0)
+        ) {
+          const charIndex = filteredQuantities.length - j - 1;
+          const currentPlain = plainChars[charIndex];
+          const previousPlain = plainChars[charIndex - 1];
+
+          if (currentPlain === "e" && ["a", "A"].includes(previousPlain)) {
+            accentPos = qty === "+" ? charIndex : charIndex + 1;
+          } else if (
+            ["e", "u"].includes(currentPlain) &&
+            ["a", "e", "o", "A", "E", "U"].includes(previousPlain) &&
+            qty !== "+"
+          ) {
+            accentPos = charIndex;
+          } else {
+            accentPos = charIndex + 1;
+          }
+        }
+      }
     }
 
-    // We remove the combining breve characters:
-    var quantities = quantities.filter(function (item) {
-        return item != "c";
-    });
-    var quantified_split = quantified_split.filter(function (item) {
-        return item != "\u0306";
-    });
+    if (accentPos > 0 && vowels.indexOf(plain[accentPos - 1]) < 6) {
+      plainChars[accentPos - 1] =
+        accented[vowels.indexOf(plain[accentPos - 1])];
 
-    // Then we accentify:
-    if (num_syllables > 2) { // Ignore words of less than 3 syllables (never accented).
-        accentable = true;
-        var nb_vowels = 0; // Will count the 3 last syllables (antepenult., penult., ult.).
-        var accent_pos = 0; // Will contain the position of accent.
-        for (var j = 0; j < quantities.length; j++) {
-            var qty = quantities[quantities.length - j - 1];
-            if (qty != "0") { // Not a consonantic.
-                nb_vowels++;
-                if ((nb_vowels == 2 && qty == "+") || (nb_vowels == 3 && accent_pos == 0)) {
-                    // Case of "ae":
-                    if (plain_split[quantities.length - j - 1] == "e" && plain_split[quantities.length - j - 2] == "a") {
-                        if (qty == "0") { // "āe" like in "sǽculum".
-                            accent_pos = quantities.length - j - 1;
-                        } else if (qty == "-") { // "āĕ" like in "áeris".
-                            accent_pos = quantities.length - j;
-                        } else if (qty == "+") { // "aē" like in "Israéli".
-                            accent_pos = quantities.length - j;
-                        }
-                    }
-                    // Cases of "oe", "au", "eu": accent on the first letter (except if the second letter is long):
-                    else if (["e", "u"].indexOf(plain_split[quantities.length - j - 1]) != -1 && ["a", "e", "o", "A", "E", "U"].indexOf(plain_split[quantities.length - j - 2]) != -1 && qty != "+") {
-                        accent_pos = quantities.length - j - 1;
-                    }
-                    // Other cases:
-                    else {
-                        accent_pos = quantities.length - j;
-                    }
-                }
-            }
-        }
-
-        if (vowels.indexOf(plain[accent_pos - 1]) < 6 && num_syllables > 2) { // Never accentify an uppercase, nor a word of less than 3 syllables (elsewhere, for ex., coepit will be accented on "oe").
-            plain_split[accent_pos - 1] = accented[vowels.indexOf(plain[accent_pos - 1])];
-
-            // áe (if e has no quantity):
-            if (plain_split[accent_pos - 1] == "á" && quantified_split[accent_pos] == "e") {
-                plain_split[accent_pos - 1] = "\u01FD";
-                plain_split[accent_pos] = "";
-            }
-            // óe (if e has no quantity):
-            if (plain_split[accent_pos - 1] == "ó" && quantified_split[accent_pos] == "e") {
-                plain_split[accent_pos - 1] = "œ\u0301";
-                plain_split[accent_pos] = "";
-            }
-        }
+      if (
+        plainChars[accentPos - 1] === "á" &&
+        filteredQuantified[accentPos] === "e"
+      ) {
+        plainChars[accentPos - 1] = "\u01FD";
+        plainChars[accentPos] = "";
+      }
+      if (
+        plainChars[accentPos - 1] === "ó" &&
+        filteredQuantified[accentPos] === "e"
+      ) {
+        plainChars[accentPos - 1] = "œ\u0301";
+        plainChars[accentPos] = "";
+      }
     }
+  }
 
-    // ae and oe => æ and œ (if e has no quantity):
-    for (var j = 0; j < plain_split.length; j++) {
-        if (plain_split[j] == "a" && quantified_split[j + 1] == "e") {
-            plain_split[j] = "æ";
-            plain_split[j + 1] = "";
-        }
-        if (plain_split[j] == "A" && quantified_split[j + 1] == "e") {
-            plain_split[j] = "Æ";
-            plain_split[j + 1] = "";
-        }
-        if (plain_split[j] == "o" && quantified_split[j + 1] == "e") {
-            plain_split[j] = "œ";
-            plain_split[j + 1] = "";
-        }
+  for (let j = 0; j < plainChars.length; j++) {
+    if (plainChars[j] === "a" && filteredQuantified[j + 1] === "e") {
+      plainChars[j] = "æ";
+      plainChars[j + 1] = "";
     }
-    with_accents = plain_split.join("");
-    return ([accentable, with_accents]);
+    if (plainChars[j] === "A" && filteredQuantified[j + 1] === "e") {
+      plainChars[j] = "Æ";
+      plainChars[j + 1] = "";
+    }
+    if (plainChars[j] === "o" && filteredQuantified[j + 1] === "e") {
+      plainChars[j] = "œ";
+      plainChars[j + 1] = "";
+    }
+  }
+
+  return [numSyllables > 2, plainChars.join("")];
 }
 
-// Dequantify a vowel:
 function dequantify(vowel) {
-    if (longs.indexOf(vowel) != -1) {
-        return (vowels[longs.indexOf(vowel)]);
-    } else if (breves.indexOf(vowel) != -1) {
-        return (vowels[breves.indexOf(vowel)]);
-    } else {
-        return vowel;
-    }
+  const longIndex = longs.indexOf(vowel);
+  if (longIndex !== -1) {
+    return vowels[longIndex];
+  }
+  const breveIndex = breves.indexOf(vowel);
+  if (breveIndex !== -1) {
+    return vowels[breveIndex];
+  }
+  return vowel;
 }
 
-// Counts the number of vowels in a word:
 function count_vowels(word) {
-    var num_v = 0;
-    for (var i = 0; i < word.length; i++) {
-        if (vowels.indexOf(dequantify(word[i])) != -1) {
-            if (!(dequantify(word[i]) == "u" && ["q", "Q"].indexOf(word[i - 1]) != -1)) {
-                if (!(dequantify(word[i]) == "u" && ["i", "I"].indexOf(dequantify(word[i - 1])) != -1)) {
-                    if (!(dequantify(word[i]) == "u" && ["g", "G"].indexOf(word[i - 1]) != -1 && vowels.indexOf(word[i + 1]) != -1)) {
-                        if (!(word[i] == "e" && dequantify(word[i - 1]) == "a")) {
-                            num_v++;
-                        }
-                    }
-                }
-            }
-        }
+  let numVowels = 0;
+
+  for (let i = 0; i < word.length; i++) {
+    const char = dequantify(word[i]);
+    if (!vowels.includes(char)) {
+      continue;
     }
-    return (num_v);
+    if (char === "u" && ["q", "Q"].includes(word[i - 1])) {
+      continue;
+    }
+    if (char === "u" && ["i", "I"].includes(dequantify(word[i - 1]))) {
+      continue;
+    }
+    if (
+      char === "u" &&
+      ["g", "G"].includes(dequantify(word[i - 1])) &&
+      vowels.includes(word[i + 1])
+    ) {
+      continue;
+    }
+    if (word[i] === "e" && dequantify(word[i - 1]) === "a") {
+      continue;
+    }
+    numVowels++;
+  }
+
+  return numVowels;
 }
 
-// Returns true if the first letter of "word" is uppercase:
 function is_uppercase(word) {
-    return (uppercase.indexOf(word.charAt(0)) != -1 ? true : false);
+  return uppercase.includes(word.charAt(0));
 }
 
-// Word => word:
 function to_lowercase(word) {
-    var word_split = word.split("");
-    word_split[0] = lowercase[uppercase.indexOf(word[0])];
-    return (word_split.join(""));
+  const firstChar = word.charAt(0);
+  const normalized = longs.includes(firstChar)
+    ? vowels[longs.indexOf(firstChar)]
+    : breves.includes(firstChar)
+      ? vowels[breves.indexOf(firstChar)]
+      : firstChar;
+
+  const lowercased = lowercase[uppercase.indexOf(normalized)];
+  return lowercased + word.slice(1);
 }
 
-// word => Word:
 function to_uppercase(word) {
-    var word_split = word.split("");
+  const chars = [...word];
+  const firstChar = chars[0];
+  const normalized = longs.includes(firstChar)
+    ? vowels[longs.indexOf(firstChar)]
+    : breves.includes(firstChar)
+      ? vowels[breves.indexOf(firstChar)]
+      : firstChar;
 
-    // Case of an initial "A" which becomes a long or a breve "a":
-    if (longs.indexOf(word_split[0]) != -1) {
-        word_split[0] = vowels[longs.indexOf(word_split[0])];
-    }
-    if (breves.indexOf(word_split[0]) != -1) {
-        word_split[0] = vowels[breves.indexOf(word_split[0])];
-    }
-
-    word_split[0] = uppercase[lowercase.indexOf(word_split[0])];
-    return (word_split.join(""));
+  chars[0] = uppercase[lowercase.indexOf(normalized)];
+  return chars.join("");
 }
 
-// Eliminates all the redundances in an array of accented words:
-function reduce(this_array) {
-    var result = [];
-    for (var i = 0; i < this_array.length; i++) {
-        if (result.indexOf(this_array[i]) == -1) {
-            result.push(this_array[i]);
-        }
-    }
-    return (result);
+function unique(thisArray) {
+  return [...new Set(thisArray)];
 }
 
-// Returns a word with his last vowel long (useful with enclitics):
 function last_long(word) {
-    if (word.substring(word.length - 2, word.length) != "āe") {
-        for (i = 0; i < vowels.length; i++) {
-            regex = new RegExp(longs[i], "g");
-            word = word.replace(regex, vowels[i]);
-            regex = new RegExp(breves[i], "g");
-            word = word.replace(regex, vowels[i]);
-        }
-        /(\S*)([aeiouy])([bcdfghjklmnpqrstvxz]*)/.exec(word);
-        return (RegExp.$1 + longs[vowels.indexOf(RegExp.$2)] + RegExp.$3);
+  if (!word.endsWith("āe")) {
+    let transformed = word;
+    for (let i = 0; i < vowels.length; i++) {
+      const regexLong = new RegExp(longs[i], "g");
+      transformed = transformed.replace(regexLong, vowels[i]);
+      const regexBreve = new RegExp(breves[i], "g");
+      transformed = transformed.replace(regexBreve, vowels[i]);
     }
-    return (word);
+    const match = /^(\S*)([aeiouy])([bcdfghjklmnpqrstvxz]*)/.exec(transformed);
+    if (match) {
+      return match[1] + longs[vowels.indexOf(match[2])] + match[3];
+    }
+  }
+  return word;
 }
