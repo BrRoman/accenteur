@@ -67,7 +67,7 @@ const formatWord = (word) => {
   const accentedWord = accentify(word);
 
   if (accentedWord.length === 2) {
-    return `<span class="double">${accentedWord.join('<span type="button" class="btn btn-link px-0 red text-decoration-none" data-bs-toggle="modal" data-bs-target="#choice_dialog">?</span>')}</span>`;
+    return `<span class="double">${accentedWord.join('<span type="button" class="btn-link px-1 red text-decoration-none" data-bs-toggle="modal" data-bs-target="#choice_dialog">?</span>')}</span>`;
   }
 
   return accentedWord[0] || word;
