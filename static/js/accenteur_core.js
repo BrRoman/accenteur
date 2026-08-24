@@ -314,7 +314,7 @@ function accentify(word) {
       found.push(word);
     }
   } else {
-    found = found.map((candidate) => qty_to_accent(word, candidate)[1]);
+    found = found.map((candidate) => quantity_to_accent(word, candidate)[1]);
   }
 
   return unique(found);
@@ -349,7 +349,7 @@ function search_quantified(word) {
   return found;
 }
 
-function qty_to_accent(plain, quantified) {
+function quantity_to_accent(plain, quantified) {
   plain = plain.replace(/æ/g, "ae").replace(/Æ/g, "Ae").replace(/œ/g, "oe");
   quantified = quantified
     .replace(/æ/g, "ae")
