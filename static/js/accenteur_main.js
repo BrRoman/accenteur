@@ -85,7 +85,7 @@ const renderOutput = () => {
 };
 
 const handleChoiceHover = ({ currentTarget }) => {
-  const $span = $(currentTarget);
+  const $span = $(currentTarget).parent();
   const text = $span.text();
 
   if (!text.includes("?")) {
