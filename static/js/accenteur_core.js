@@ -1,4 +1,5 @@
 // This module returns the accented version(s) of a word.
+// TODO: Check that there is no more than 2 accented words in output.
 
 const vowels = ["a", "e", "i", "o", "u", "y", "A", "E", "I", "O", "U", "Y"];
 const consonants = [
@@ -193,12 +194,11 @@ function accentify(word) {
   }
 
   const enclitics = ["que", "ne", "ve", "dam", "quam", "libet"];
-  for (const candidate of enclitics) {
-    if (word.length > candidate.length && word.endsWith(candidate)) {
-      enclitic = candidate;
-      const baseAll = normalizedAll.slice(0, -candidate.length);
+  for (let enclitic of enclitics) {
+    if (word.length > enclitic.length && word.endsWith(enclitic)) {
+      const baseAll = normalizedAll.slice(0, -enclitic.length);
       const subFound = search_quantified(baseAll);
-      found.push(...subFound.map((s) => (s ? last_long(s) + candidate : s)));
+      found.push(...subFound.map((s) => (s ? last_long(s) + enclitic : s)));
       break;
     }
   }
