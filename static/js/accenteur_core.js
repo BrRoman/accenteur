@@ -229,28 +229,24 @@ function accentify(word) {
     .replace(/^peri/g, "perj")
     .replace(/^subi/g, "subj");
 
-  let withJ = false;
+  let hasJ = false;
   if (newWord !== normalizedWord && count_vowels(newWord) > 2) {
-    withJ = true;
+    hasJ = true;
     found.push(
       ...search_quantified(newWord).map((s) => (s ? s.replace("j", "i") : s)),
     );
   }
 
-  const aeWord = word
-    .replace(/æ/g, "ae")
-    .replace(/Æ/g, "Ae")
-    .replace(/œ/g, "oe");
+  let hasÆŒ = false;
+  newWord = word.replace(/æ/g, "ae").replace(/Æ/g, "ae").replace(/œ/g, "oe");
   newWordAll = newWordAll
     .replace(/æ/g, "ae")
     .replace(/Æ/g, "Ae")
     .replace(/œ/g, "oe");
-
-  let hasAeOe = false;
-  if (aeWord !== word) {
-    hasAeOe = true;
+  if (newWord !== word) {
+    hasÆŒ = true;
     found.push(
-      ...search_quantified(aeWord).filter((s) => s.indexOf("āĕ") === -1),
+      ...search_quantified(newWord).filter((s) => s.indexOf("āĕ") === -1),
     );
   }
 
@@ -272,10 +268,10 @@ function accentify(word) {
         if (enclitic) {
           result = last_long(result) + enclitic;
         }
-        if (withJ) {
+        if (hasJ) {
           result = result.replace("j", "i");
         }
-        if (hasAeOe && result.indexOf("āĕ") !== -1) {
+        if (hasÆŒ && result.indexOf("āĕ") !== -1) {
           return null;
         }
         return result;
