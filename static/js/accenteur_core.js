@@ -241,7 +241,7 @@ function accentify(word) {
   newWord = word.replace(/æ/g, "ae").replace(/Æ/g, "ae").replace(/œ/g, "oe");
   newWordAll = newWordAll
     .replace(/æ/g, "ae")
-    .replace(/Æ/g, "Ae")
+    .replace(/Æ/g, "ae")
     .replace(/œ/g, "oe");
   if (newWord !== word) {
     hasÆŒ = true;
