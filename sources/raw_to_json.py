@@ -217,7 +217,7 @@ def parse_lemmes(text: str, models: dict[str, dict[str, dict]]) -> dict[str, lis
             canonical = canonical[:-1] if canonical.endswith(("2", "3", "4")) else canonical
             for variant in canonical.split(","):
                 for root_number, root_data in model_data["roots"].items():
-                    if model_key == "inv" or root_data in {"K", "-"}:
+                    if model_key == "inv" or root_data in ["K", "-"]:
                         root_value = variant
                     else:
                         delete_part = int(root_data[0])
