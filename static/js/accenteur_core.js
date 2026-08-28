@@ -375,6 +375,8 @@ function quantity_to_accent(plain, quantified) {
           quantities[i] = "0";
         } else if (current === "e" && dequantify(previous) === "a") {
           quantities[i] = "0";
+        } else if (current === "e" && dequantify(previous) === "o") {
+          quantities[i] = "0";
         } else if (
           current === "u" &&
           previous === "g" &&
