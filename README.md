@@ -4,23 +4,23 @@ Accenteur is a web application written in Javascript to accentuate latin texts a
 
 Its algorithms and data were adaptated from [Collatinus](https://github.com/biblissima/collatinus).
 
-Its name comes from the french name of a little bird: the Dunnock (*Prunella modularis*).
-
+Its name comes from the french name of a little bird: the Dunnock (_Prunella modularis_).
 
 ### Instructions for use
 
 Simply click on `index.html`.
 
-
 ### Demo
 
 Try Accenteur [here](https://brroman.github.io/accenteur/).
 
+### Technical details
+
+See the Wiki of Accenteur [here](https://github.com/BrRoman/accenteur/wiki/).
 
 ### Resources
 
 On [latin-ecclesiastic-accents](https://github.com/gregorio-project/latin-ecclesiastic-accents), you will find the rules of the latin accentuation and a corpus of latin accented texts.
-
 
 ### Thanks
 
