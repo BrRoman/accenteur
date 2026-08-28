@@ -73,6 +73,9 @@ def long_by_position(word: str) -> str:
             if not ((letter in {"e", "u"}) and index > 0 and characters[index - 1] in {"ā", "ō"}):
                 characters[index] = longs[letter]
 
+        if characters[index] == "y":
+            characters[index] = "ȳ"
+
     return "".join(characters)
 
 
