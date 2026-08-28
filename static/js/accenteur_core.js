@@ -504,7 +504,7 @@ function quantity_to_accent(plain, quantified) {
     }
   }
 
-  return [numSyllables > 2, plainChars.join("")];
+  return plainChars.join("");
 }
 
 function dequantify(vowel) {
