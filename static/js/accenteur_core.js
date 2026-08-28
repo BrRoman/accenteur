@@ -439,7 +439,7 @@ function quantity_to_accent(plain, quantified) {
 
   if (numSyllables > 2) {
     let nbVowels = 0;
-    let accentPos = 0;
+    let accentIndex = 0;
 
     for (let j = 0; j < filteredQuantities.length; j++) {
       const qty = filteredQuantities[filteredQuantities.length - j - 1];
@@ -447,44 +447,42 @@ function quantity_to_accent(plain, quantified) {
         nbVowels++;
         if (
           (nbVowels === 2 && qty === "+") ||
-          (nbVowels === 3 && accentPos === 0)
+          (nbVowels === 3 && accentIndex === 0)
         ) {
           const charIndex = filteredQuantities.length - j - 1;
           const currentPlain = plainChars[charIndex];
           const previousPlain = plainChars[charIndex - 1];
 
-          if (currentPlain === "e" && ["a", "A"].includes(previousPlain)) {
-            accentPos = qty === "+" ? charIndex : charIndex + 1;
-          } else if (
-            ["e", "u"].includes(currentPlain) &&
-            ["a", "e", "o", "A", "E", "U"].includes(previousPlain) &&
-            qty !== "+"
-          ) {
-            accentPos = charIndex;
           } else {
-            accentPos = charIndex + 1;
+            if (
+              ["e", "u"].includes(currentPlain) &&
+              ["a", "e", "o", "A", "E", "U"].includes(previousPlain) &&
+              qty !== "+"
+            ) {
+              accentIndex = charIndex - 1;
+            } else {
+              accentIndex = charIndex;
+            }
           }
         }
       }
     }
 
-    if (accentPos > 0 && vowels.indexOf(plain[accentPos - 1]) < 6) {
-      plainChars[accentPos - 1] =
-        accented[vowels.indexOf(plain[accentPos - 1])];
-
+    if (vowels.indexOf(plain[accentIndex]) < 6) {
+      plainChars[accentIndex] = accented[vowels.indexOf(plain[accentIndex])];
       if (
-        plainChars[accentPos - 1] === "á" &&
-        filteredQuantified[accentPos] === "e"
+        plainChars[accentIndex] === "á" &&
+        filteredQuantified[accentIndex + 1] === "e"
       ) {
-        plainChars[accentPos - 1] = "\u01FD";
-        plainChars[accentPos] = "";
+        plainChars[accentIndex] = "\u01FD";
+        plainChars[accentIndex + 1] = "";
       }
       if (
-        plainChars[accentPos - 1] === "ó" &&
-        filteredQuantified[accentPos] === "e"
+        plainChars[accentIndex] === "ó" &&
+        filteredQuantified[accentIndex + 1] === "e"
       ) {
-        plainChars[accentPos - 1] = "œ\u0301";
-        plainChars[accentPos] = "";
+        plainChars[accentIndex] = "œ\u0301";
+        plainChars[accentIndex + 1] = "";
       }
     }
   }
