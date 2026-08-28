@@ -453,6 +453,8 @@ function quantity_to_accent(plain, quantified) {
           const currentPlain = plainChars[charIndex];
           const previousPlain = plainChars[charIndex - 1];
 
+          if (nbVowels === 3) {
+            accentIndex = charIndex;
           } else {
             if (
               ["e", "u"].includes(currentPlain) &&
