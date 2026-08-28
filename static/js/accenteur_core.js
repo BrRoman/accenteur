@@ -310,7 +310,7 @@ function accentify(word) {
       found.push(word);
     }
   } else {
-    found = found.map((candidate) => quantity_to_accent(word, candidate)[1]);
+    found = found.map((item) => quantity_to_accent(word, item));
   }
 
   return unique(found);
