@@ -1,0 +1,21 @@
+
+Optimized tool selection
+
+Inspecting the script to identify modernization opportunities.
+
+
+
+Updating raw_to_json.py with a cleaner, modern Python structure and safer file handling.
+
+Edited
+raw_to_json.py+250-290
+✅ raw_to_json.py has been modernized.
+
+What changed
+Replaced manual file open/close with Path.read_text() and Path.open()
+Converted string translation logic to str.translate
+Encapsulated parsing in functions: parse_modeles, build_terminations, parse_lemmes, write_output
+Added main() and if __name__ == "__main__" entrypoint
+Simplified range expansion and common-term expansion
+Preserved original output format in data.js
+If you want, I can also add a small test file for this script.
